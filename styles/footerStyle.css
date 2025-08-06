@@ -108,6 +108,11 @@
   #upper-footer {
     grid-template-columns: 1fr 1fr;
   }
+  
+  .footer-column{
+    align-items: flex-start;
+    text-align: left;
+  }
 
   #lower-footer {
     flex-direction: row;
@@ -128,6 +133,11 @@
 @media (min-width: 901px) {
   #upper-footer {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .footer-column {
+    align-items: flex-start;
+    text-align: left;
   }
 
   #lower-footer {
