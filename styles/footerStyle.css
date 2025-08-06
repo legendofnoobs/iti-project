@@ -1,0 +1,147 @@
+#footer-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #1d1d1d;
+  background: #fbfbfb;
+  font-size: 14px;
+  color: #111;
+  padding: 3% 5% 2%;
+}
+
+#footer-container a {
+  text-decoration: none;
+  color: #1d1d1d;
+}
+
+#footer-container a:hover {
+  color: #1d1d1d95;
+}
+
+#upper-footer {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding-bottom: 10%;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.footer-column > p {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.footer-column ul {
+  list-style-type: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-column form {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-column form input {
+  border: none;
+  border-bottom: 1px solid #1d1d1d;
+  background-color: transparent;
+  font-size: 14px;
+}
+
+.footer-column form button {
+  border: none;
+  background: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #555555;
+  padding: 10px;
+}
+
+.footer-column form button:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #1d1d1d;
+}
+
+#lower-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 25px;
+}
+
+#lower-footer-left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+}
+
+#policy {
+  display: flex;
+  gap: 10px;
+}
+
+#lower-footer-right-side {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  #upper-footer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #lower-footer {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  #lower-footer-left-side {
+    align-items: flex-start;
+    width: 50%;
+  }
+
+  #lower-footer-right-side {
+    width: 50%;
+    justify-content: end;
+  }
+}
+
+@media (min-width: 901px) {
+  #upper-footer {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #lower-footer {
+    flex-direction: row;
+    gap: 0;
+  }
+
+  #lower-footer-left-side {
+    align-items: flex-start;
+    width: 50%;
+  }
+
+  #lower-footer-right-side {
+    width: 50%;
+    justify-content: end;
+  }
+}
