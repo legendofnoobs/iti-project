@@ -1,11 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="../styles/indexStyle.css" />
+    <link rel="stylesheet" href="../styles/checkoutStyle.css" />
+  </head>
+  <body>
+    <!-- <div id="navbar"></div> -->
+    <div class="checkout-container">
+      <p class="checkout-path">
+        home / <span class="checkout-path-here">checkout</span>
+      </p>
+      <h2>Billing details</h2>
+      <form class="billing-form">
+        <div class="billing-form-field">
+          <label>Full Name</label>
+          <input type="text" required />
+        </div>
+        <div class="billing-form-field">
+          <label>Street address</label>
+          <input
+            type="text"
+            placeholder="House number and street name"
+            required
+          />
+        </div>
+        <div class="billing-form-field">
+          <label>Town / City</label>
+          <input type="text" required />
+        </div>
+        <div class="billing-form-field">
+          <label>Phone</label>
+          <input type="tel" required />
+        </div>
+        <div class="billing-form-field">
+          <label>Email address</label>
+          <input type="email" required />
+        </div>
+      </form>
+      <h2>Your order</h2>
+      <table class="order-summary">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="order-product">Plain White Shirt</td>
+            <td class="order-product-price">$59.00</td>
+          </tr>
+          <tr>
+            <td>Subtotal</td>
+            <td>$59.00</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="order-total">$59.00</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="place-order">
+        <div class="payment-note">
+          Cash on delivery. Please contact us if you require assistance or wish
+          to make alternate arrangements.
+        </div>
+        <div class="place-order-btn-locate">
+            <button class="place-order-btn">Place Order</button>
+        </div>
+      </div>
+    </div>
+    <div id="footer"></div>
+    <script src="../scripts/footerScript.js"></script>
+    <script src="../scripts/navbarScript.js"></script>
+  </body>
 </html>
