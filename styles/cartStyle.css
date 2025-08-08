@@ -1,7 +1,7 @@
 .cart-container {
-  max-width: 1200px;
-  margin: 100px auto 60px;
-  padding: 0 20px;
+  width: 100%;
+  /* margin: 100px auto 60px; */
+  padding: 120px 50px 0 50px;
 }
 
 .cart-path {
