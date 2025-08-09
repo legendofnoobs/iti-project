@@ -11,6 +11,7 @@ header {
     right: 0;
     width: 100%;
     background-color: #fbfbfb;
+    z-index: 3;
 }
 
 nav {
@@ -71,6 +72,7 @@ a {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    z-index: 4;
 }
 
 .sidebar .nav-links,
