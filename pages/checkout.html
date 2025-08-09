@@ -9,19 +9,20 @@
   </head>
   <body>
     <div id="navbar"></div>
-    <div class="checkout-container">
+    <form class="checkout-container" method="post" >
       <p class="checkout-path">
         home / <span class="checkout-path-here">checkout</span>
       </p>
       <h2>Billing details</h2>
-      <form class="billing-form">
+      <div class="billing-form">
         <div class="billing-form-field">
           <label>Full Name</label>
-          <input type="text" required />
+          <input name="fullName" type="text" required />
         </div>
         <div class="billing-form-field">
           <label>Street address</label>
           <input
+            name="streetAddress"
             type="text"
             placeholder="House number and street name"
             required
@@ -29,17 +30,17 @@
         </div>
         <div class="billing-form-field">
           <label>Town / City</label>
-          <input type="text" required />
+          <input name="town" type="text" required />
         </div>
         <div class="billing-form-field">
           <label>Phone</label>
-          <input type="tel" required />
+          <input name="phone" type="text" required />
         </div>
         <div class="billing-form-field">
           <label>Email address</label>
-          <input type="email" required />
+          <input name="email" type="email" required />
         </div>
-      </form>
+      </div>
       <h2>Your order</h2>
       <table class="order-summary">
         <thead>
@@ -69,11 +70,17 @@
           to make alternate arrangements.
         </div>
         <div class="place-order-btn-locate">
-            <button class="place-order-btn">Place Order</button>
+            <button class="place-order-btn" type="submit">Place Order</button>
         </div>
+      </div>
+    </form>
+     <div id="popup" onclick="closePopup()">
+      <div class="popup-content">
+        <p>Order placed successfully 🙌</p>
       </div>
     </div>
     <div id="footer"></div>
+    <script src="../scripts/checkoutScript.js"></script>
     <script src="../scripts/footerScript.js"></script>
     <script src="../scripts/navbarScript.js"></script>
   </body>
