@@ -1,1 +1,69 @@
-//test
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../styles/indexStyle.css" />
+    <link rel="stylesheet" href="../styles/cartStyle.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+
+    <div class="cart-container">
+      <p ><a href="../index.html" class="cart-path">HOME</a> / <span class="cart-path-here">SHOPPING CART</span></p>
+
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><button class="remove-btn">×</button></td>
+            <td class="product-info">
+              <div class="product-details">
+                <div class="product-image-placeholder"></div>
+                <span>Plain White Shirt</span>
+              </div>
+            </td>
+            <td>$59.00</td>
+            <td><input type="number" value="1" min="1" class="quantity-input" /></td>
+            <td>$59.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cart-totals-section">
+        <h2>Cart Totals</h2>
+        <div class="totals-box">
+          <div class="totals-row">
+            <span>Subtotal</span>
+            <span>$59.00</span>
+          </div>
+          <div class="totals-row">
+            <span>Shipping Fee</span>
+            <span class="free-label">FREE!!!</span>
+          </div>
+          <div class="totals-row total-final">
+            <span>Total</span>
+            <span>$59.00</span>
+          </div>
+          <a href="checkout.html">
+          <button class="checkout-btn">PROCEED TO CHECKOUT</button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="../scripts/footerScript.js"></script>
+    <script src="../scripts/navbarScript.js"></script>
+  </body>
+</html>
