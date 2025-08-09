@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 #footer-container {
@@ -12,9 +13,7 @@
   background: #fbfbfb;
   font-size: 14px;
   color: #111;
-  /* padding: 3% 5% 2%; */
-  padding: 20px 60px;
-  margin-top: 50px;
+  padding: 60px 60px 20px;
 }
 
 #footer-container a {
@@ -37,7 +36,7 @@
   flex-direction: column;
   align-items: start;
   text-align: center;
-  /* padding-bottom: 20px; */
+  padding-bottom: 20px;
 }
 
 .footer-column>p {
