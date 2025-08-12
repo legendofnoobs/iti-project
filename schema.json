@@ -7,6 +7,8 @@
         "image": "string",
         "category": "string",
         "tags": ["string"],
-        "TallDescription": "string"
+        "TallDescription": "string",
+        "discount": "number",
+        "rate":"number"
     }
 }
