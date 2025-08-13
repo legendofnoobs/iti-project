@@ -1,0 +1,212 @@
+[
+    {
+        "name": "Urban Tee",
+        "priceBefore": 30,
+        "priceAfter": 25,
+        "ShortDescription": "Modern urban style tee.",
+        "image": "assets/clothes/tshirt1.jpg",
+        "category": "T-Shirts",
+        "tags": [
+            "casual",
+            "urban"
+        ],
+        "TallDescription": "A trendy tee for the city streets.",
+        "discount": 17,
+        "rate": 4.3
+    },
+    {
+        "name": "Relaxed Jeans",
+        "priceBefore": 70,
+        "priceAfter": 60,
+        "ShortDescription": "Comfortable relaxed fit jeans.",
+        "image": "assets/clothes/jeans1.jpg",
+        "category": "Jeans",
+        "tags": [
+            "casual",
+            "denim"
+        ],
+        "TallDescription": "Classic jeans.",
+        "discount": 14,
+        "rate": 4.6
+    },
+    {
+        "name": "Wool Blend Sweater",
+        "priceBefore": 50,
+        "priceAfter": 45,
+        "ShortDescription": "Soft wool blend sweater.",
+        "image": "assets/clothes/sweater1.jpg",
+        "category": "Sweaters",
+        "tags": [
+            "winter",
+            "warm"
+        ],
+        "TallDescription": "Top quality warm sweater.",
+        "discount": 10,
+        "rate": 4.1
+    },
+    {
+        "name": "Lightweight Jacket",
+        "priceBefore": 90,
+        "priceAfter": 80,
+        "ShortDescription": "Perfect for layering.",
+        "image": "assets/clothes/jacket1.jpg",
+        "category": "Jackets",
+        "tags": [
+            "casual",
+            "outerwear"
+        ],
+        "TallDescription": "Complete any outfit.",
+        "discount": 11,
+        "rate": 4.8
+    },
+    {
+        "name": "Summer Breeze Dress",
+        "priceBefore": 65,
+        "priceAfter": 55,
+        "ShortDescription": "Flowy summer dress.",
+        "image": "assets/clothes/dress1.jpg",
+        "category": "Dresses",
+        "tags": [
+            "summer",
+            "vacation"
+        ],
+        "TallDescription": "Perfect for sunny days.",
+        "discount": 15,
+        "rate": 4.4
+    },
+    {
+        "name": "Oxford Shirt",
+        "priceBefore": 35,
+        "priceAfter": 30,
+        "ShortDescription": "Classic oxford style shirt.",
+        "image": "assets/clothes/shirt1.jpg",
+        "category": "Shirts",
+        "tags": [
+            "formal",
+            "business"
+        ],
+        "TallDescription": "Button-down.",
+        "discount": 14,
+        "rate": 4.2
+    },
+    {
+        "name": "Cargo Shorts",
+        "priceBefore": 40,
+        "priceAfter": 35,
+        "ShortDescription": "Durable cargo shorts.",
+        "image": "assets/clothes/shorts1.jpg",
+        "category": "Shorts",
+        "tags": [
+            "casual",
+            "outdoor"
+        ],
+        "TallDescription": "Practical design.",
+        "discount": 13,
+        "rate": 4.5
+    },
+    {
+        "name": "Pleated Skirt",
+        "priceBefore": 50,
+        "priceAfter": 45,
+        "ShortDescription": "Elegant pleated skirt.",
+        "image": "assets/clothes/skirt1.jpg",
+        "category": "Skirts",
+        "tags": [
+            "formal",
+            "office"
+        ],
+        "TallDescription": "Professional look.",
+        "discount": 10,
+        "rate": 4.0
+    },
+    {
+        "name": "Ribbed Crop Top",
+        "priceBefore": 37,
+        "priceAfter": 32,
+        "ShortDescription": "Stylish ribbed crop top.",
+        "image": "assets/clothes/top1.jpg",
+        "category": "Tops",
+        "tags": [
+            "casual",
+            "party"
+        ],
+        "TallDescription": "Trendy and comfy.",
+        "discount": 14,
+        "rate": 4.7
+    },
+    {
+        "name": "Chino Pants",
+        "priceBefore": 60,
+        "priceAfter": 55,
+        "ShortDescription": "Versatile chino pants.",
+        "image": "assets/clothes/pants1.jpg",
+        "category": "Pants",
+        "tags": [
+            "casual",
+            "smart-casual"
+        ],
+        "TallDescription": "Easy to style.",
+        "discount": 8,
+        "rate": 4.0
+    },
+    {
+        "name": "Fleece Hoodie",
+        "priceBefore": 55,
+        "priceAfter": 50,
+        "ShortDescription": "Cozy fleece hoodie.",
+        "image": "assets/clothes/hoodie1.jpg",
+        "category": "Hoodies",
+        "tags": [
+            "casual",
+            "loungewear"
+        ],
+        "TallDescription": "Super soft fleece.",
+        "discount": 9,
+        "rate": 4.3
+    },
+    {
+        "name": "Tailored Blazer",
+        "priceBefore": 100,
+        "priceAfter": 90,
+        "ShortDescription": "Sophisticated tailored blazer.",
+        "image": "assets/clothes/blazer1.jpg",
+        "category": "Blazers",
+        "tags": [
+            "formal",
+            "business"
+        ],
+        "TallDescription": "Refined silhouette.",
+        "discount": 10,
+        "rate": 4.6
+    },
+    {
+        "name": "Knit Cardigan",
+        "priceBefore": 45,
+        "priceAfter": 40,
+        "ShortDescription": "Warm knit cardigan.",
+        "image": "assets/clothes/cardigan1.jpg",
+        "category": "Cardigans",
+        "tags": [
+            "casual",
+            "winter"
+        ],
+        "TallDescription": "Comfortable and warm.",
+        "discount": 11,
+        "rate": 4.1
+    },
+    {
+        "name": "Basic Tank Top",
+        "priceBefore": 25,
+        "priceAfter": 22,
+        "ShortDescription": "Essential basic tank top.",
+        "image": "assets/clothes/tanktop1.jpg",
+        "category": "Tops",
+        "tags": [
+            "casual",
+            "summer"
+        ],
+        "TallDescription": "Perfect for layering.",
+        "discount": 12,
+        "rate": 4.4
+    }
+]
