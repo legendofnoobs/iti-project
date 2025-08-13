@@ -56,10 +56,19 @@
 }
 
 .product-image-placeholder {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background-color: #f2f2f2;
   border: 1px solid #ddd;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.product-image-placeholder img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .quantity-input {
@@ -120,11 +129,11 @@
 
 .checkout-popup {
   display: none;
-  position: fixed; 
-  z-index: 10; 
-  top: 0; 
-  width: 100%; 
-  height: 100%; 
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(165, 143, 130, 0.4);
 }
 
@@ -158,6 +167,7 @@
 #cancel_checkout {
   background: #ccc;
 }
+
 .checkout-popup-buttons button:hover {
   opacity: 0.8;
 }
