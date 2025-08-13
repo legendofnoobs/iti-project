@@ -19,27 +19,27 @@ function handleSubmit(event) {
   const phone = document.querySelector(`input[name="billing-form-phone"]`);
   const email = document.querySelector(`input[name="billing-form-email"]`);
   
-  if (!(/^[a-zA-Z\s-]+$/).test(fullName.value)) {
+  if (!(/^[a-zA-Z\s-]+$/).test(fullName.value.trim())) {
     createErrorMessageAndFocus(fullName,"Please enter character from a to z or from A to Z !");
     return;
   }
 
-  if (!streetAddress.value) {
+  if (!streetAddress.value.trim()) {
     createErrorMessageAndFocus(streetAddress,"Please enter the street address !");
     return;
   }
 
-  if (!town.value) {
+  if (!town.value.trim()) {
     createErrorMessageAndFocus(town,"Please enter the town !");
     return;
   }
 
-  if (!(/^[0-9]{11}$/).test(phone.value)) {
+  if (!(/^[0-9]{11}$/).test(phone.value.trim())) {
     createErrorMessageAndFocus(phone,"Please enter the phone with 11 numbers only !");
     return;
   }
 
-  if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(email.value)) {
+  if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(email.value.trim())) {
     createErrorMessageAndFocus(email,"Please enter email as lol@gmail.com");
     return;
   }
