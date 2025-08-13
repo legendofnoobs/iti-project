@@ -35,9 +35,14 @@
   flex-direction: column;
 }
 
-.billing-form label {
+.billing-form label{
   font-size: 12px;
   color: #888888;
+}
+
+.billing-form .error-message{
+   font-size: 12px;
+   color: #ff000098;
 }
 
 .billing-form label::after {
@@ -129,7 +134,7 @@
 
 .popup-content {
   color: white;
-  background-color: #D6763CB8;
+  background-color: #d6773c;
   text-transform: uppercase;
   padding: 60px 40px;
 }
