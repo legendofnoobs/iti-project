@@ -1,3 +1,14 @@
+function createErrorMessageAndFocus(element,message){
+    if (!element.nextElementSibling) {
+      const errorMessege = document.createElement("p");
+      errorMessege.innerText = message;
+      errorMessege.classList.add("error-message");
+      element.parentNode.appendChild(errorMessege);
+    }
+    element.scrollIntoView({ behavior: "smooth" });
+    element.focus();
+}
+
 function handleSubmit(event) {
   event.preventDefault();
   const fullName = document.querySelector(`input[name="billing-form-fullName"`);
@@ -9,67 +20,27 @@ function handleSubmit(event) {
   const email = document.querySelector(`input[name="billing-form-email"]`);
   
   if (!(/^[a-zA-Z\s-]+$/).test(fullName.value)) {
-    if (!fullName.nextElementSibling) {
-      const errorMessege = document.createElement("p");
-      errorMessege.innerText =
-        "Please enter character from a to z or from A to Z !";
-      errorMessege.classList.add("error-message");
-      fullName.parentNode.appendChild(errorMessege);
-    }
-    fullName.scrollIntoView({ behavior: "smooth" });
-    fullName.focus();
+    createErrorMessageAndFocus(fullName,"Please enter character from a to z or from A to Z !");
     return;
   }
 
   if (!streetAddress.value) {
-    if (!streetAddress.nextElementSibling) {
-      const errorMessege = document.createElement("p");
-      errorMessege.innerText =
-        "Please enter the street address !";
-      errorMessege.classList.add("error-message");
-      streetAddress.parentNode.appendChild(errorMessege);
-    }
-    streetAddress.scrollIntoView({ behavior: "smooth" });
-    streetAddress.focus();
+    createErrorMessageAndFocus(streetAddress,"Please enter the street address !");
     return;
   }
 
   if (!town.value) {
-    if (!town.nextElementSibling) {
-      const errorMessege = document.createElement("p");
-      errorMessege.innerText =
-        "Please enter the town !";
-      errorMessege.classList.add("error-message");
-      town.parentNode.appendChild(errorMessege);
-    }
-    town.scrollIntoView({ behavior: "smooth" });
-    town.focus();
+    createErrorMessageAndFocus(town,"Please enter the town !");
     return;
   }
 
   if (!(/^[0-9]{11}$/).test(phone.value)) {
-    if (!phone.nextElementSibling) {
-      const errorMessege = document.createElement("p");
-      errorMessege.innerText =
-        "Please enter the phone with 11 numbers only !";
-      errorMessege.classList.add("error-message");
-      phone.parentNode.appendChild(errorMessege);
-    }
-    phone.scrollIntoView({ behavior: "smooth" });
-    phone.focus();
+    createErrorMessageAndFocus(phone,"Please enter the phone with 11 numbers only !");
     return;
   }
 
   if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/).test(email.value)) {
-    if (!email.nextElementSibling) {
-      const errorMessege = document.createElement("p");
-      errorMessege.innerText =
-        "Please enter email as lol@gmail.com";
-      errorMessege.classList.add("error-message");
-      email.parentNode.appendChild(errorMessege);
-    }
-    email.scrollIntoView({ behavior: "smooth" });
-    email.focus();
+    createErrorMessageAndFocus(email,"Please enter email as lol@gmail.com");
     return;
   }
 
@@ -81,9 +52,7 @@ function handleSubmit(event) {
 }
 
 function clearErrorMessage(element){
-  if(element.nextElementSibling){
-    element.nextElementSibling.remove();
-  }
+    element.nextElementSibling?.remove();
 }
 
 function showPopup() {
