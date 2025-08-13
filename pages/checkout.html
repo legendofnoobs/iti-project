@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="navbar"></div>
-    <form class="checkout-container" method="post" >
+    <form class="checkout-container" method="post" onsubmit="return handleSubmit(event)" novalidate>
       <p class="checkout-path">
         home / <span class="checkout-path-here">checkout</span>
       </p>
@@ -17,28 +17,29 @@
       <div class="billing-form">
         <div class="billing-form-field">
           <label>Full Name</label>
-          <input name="fullName" type="text" required />
+          <input name="billing-form-fullName" type="text" required oninput="clearErrorMessage(this)"/>
         </div>
         <div class="billing-form-field">
           <label>Street address</label>
           <input
-            name="streetAddress"
+            name="billing-form-streetAddress"
             type="text"
             placeholder="House number and street name"
             required
+            oninput="clearErrorMessage(this)"
           />
         </div>
         <div class="billing-form-field">
           <label>Town / City</label>
-          <input name="town" type="text" required />
+          <input name="billing-form-town" type="text" required oninput="clearErrorMessage(this)"/>
         </div>
         <div class="billing-form-field">
           <label>Phone</label>
-          <input name="phone" type="text" required />
+          <input name="billing-form-phone" type="text" required oninput="clearErrorMessage(this)"/>
         </div>
         <div class="billing-form-field">
           <label>Email address</label>
-          <input name="email" type="email" required />
+          <input name="billing-form-email" type="email" required oninput="clearErrorMessage(this)"/>
         </div>
       </div>
       <h2>Your order</h2>
@@ -74,11 +75,6 @@
         </div>
       </div>
     </form>
-     <div id="popup" onclick="closePopup()">
-      <div class="popup-content">
-        <p>Order placed successfully 🙌</p>
-      </div>
-    </div>
     <div id="footer"></div>
     <script src="../scripts/checkoutScript.js"></script>
     <script src="../scripts/footerScript.js"></script>
