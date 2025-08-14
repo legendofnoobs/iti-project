@@ -66,3 +66,19 @@ function showPopup() {
   document.body.insertBefore(popup,footer);
   document.getElementById("popup").style.display = "flex";
 }
+
+//load data from cart
+document.addEventListener("DOMContentLoaded", () => {
+    const checkoutData = JSON.parse(localStorage.getItem('checkout_data'));
+
+    if (checkoutData) {
+        document.querySelector('.order-product').textContent =
+            `${checkoutData.product} × ${checkoutData.quantity}`;
+        document.querySelector('.order-product-price').textContent =
+            `$${(checkoutData.price * checkoutData.quantity).toFixed(2)}`;
+        document.querySelectorAll('tbody tr:nth-child(2) td:last-child')[0].textContent =
+            `$${checkoutData.subtotal}`;
+        document.querySelector('.order-total').textContent =
+            `$${checkoutData.total}`;
+    }
+});

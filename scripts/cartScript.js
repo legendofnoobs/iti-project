@@ -51,3 +51,24 @@ confirm_button_checkout.addEventListener('click', () => {
 cancel_button_checkout.addEventListener('click', () => {
     checkout_confirm_popUp.style.display = 'none';
 });
+
+
+//save data to give to checkout
+confirm_button_checkout.addEventListener('click', () => {
+    const productName = cart.querySelector('.product-details span').textContent.trim();
+    const quantityValue = parseInt(quantity.value) || 1;
+    const pricePerItem = price_per_item.toFixed(2);
+    const subtotalValue = (price_per_item * quantityValue).toFixed(2);
+
+    const cartData = {
+        product: productName,
+        quantity: quantityValue,
+        price: pricePerItem,
+        subtotal: subtotalValue,
+        total: subtotalValue
+    };
+
+    localStorage.setItem('checkout_data', JSON.stringify(cartData));
+
+    window.location.href = 'checkout.html';
+});
