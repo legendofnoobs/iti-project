@@ -1,63 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NorthStar</title>
-    <link rel="stylesheet" href="../styles/singleProduct.css">
-</head>
+    <link rel="stylesheet" href="../styles/indexStyle.css" />
+    <link rel="stylesheet" href="../styles/singleProduct.css" />
+  </head>
 
-<body>
+  <body>
     <div id="navbar"></div>
     <main class="container">
-        <section class="product-section">
-            <div class="product-image">
-                <span id="product-discount" class="product-badge"></span>
-                <img id="product-image" src="" alt="Product Image">
-            </div>
-            <div class="product-info">
-                <h1 id="product-name" class="text-3xl font-extrabold mb-1"></h1>
-                <div class="product-rating">
-                    ★★★★★
-                </div>
-                <div class="product-price">
-                    <span id="product-price"></span>
-                    <span id="product-original-price" class="original-price"></span>
-                </div>
-                <p id="product-description" class="description-text">
+      <section class="product-section">
+        <div class="product-image">
+          <span id="product-discount" class="product-badge"></span>
+          <img id="product-image" src="" alt="Product Image" />
+        </div>
+        <div class="product-info">
+          <h1 id="product-name" class="text-3xl font-extrabold mb-1"></h1>
+          <div class="product-rating">★★★★★</div>
+          <div class="product-price">
+            <span id="product-price"></span>
+            <span id="product-original-price" class="original-price"></span>
+          </div>
+          <p id="product-description" class="description-text"></p>
+          <select id="size-select" class="size-selector">
+            <option value="#">select size</option>
+            <option value="s">Small</option>
+            <option value="m">Medium</option>
+            <option value="l">Large</option>
+            <option value="xl">XL</option>
+          </select>
+          <br />
+          <button class="add-to-cart-btn">ADD TO CART</button>
+        </div>
+      </section>
 
-                </p>
-                <select id="size-select" class="size-selector">
-                    <option value="#">select size</option>
-                    <option value="s">Small</option>
-                    <option value="m">Medium</option>
-                    <option value="l">Large</option>
-                    <option value="xl">XL</option>
-                </select>
-                <br>
-                <button class="add-to-cart-btn">ADD TO CART</button>
-            </div>
-        </section>
-
-        <section class="details-section">
-            <div class="details-tabs">
-                <button id="description-tab" class="tab-button active">Description</button>
-                <button id="reviews-tab" class="tab-button">Reviews(0)</button>
-            </div>
-            <div id="description-content" class="tab-content active">
-                
-            </div>
-            <div id="reviews-content" class="tab-content">
-                <p>There are no reviews for this product yet. Be the first to write one!</p>
-            </div>
-        </section>
+      <section class="details-section">
+        <div class="details-tabs">
+          <button id="description-tab" class="tab-button active">
+            Description
+          </button>
+          <button id="reviews-tab" class="tab-button">Reviews(0)</button>
+        </div>
+        <div id="description-content" class="tab-content active"></div>
+        <div id="reviews-content" class="tab-content">
+          <p>
+            There are no reviews for this product yet. Be the first to write
+            one!
+          </p>
+        </div>
+      </section>
     </main>
 
     <div id="footer"></div>
     <script src="../scripts/singleProduct.js"></script>
     <script src="../scripts/navbarScript.js"></script>
     <script src="../scripts/footerScript.js"></script>
-</body>
-
+  </body>
 </html>

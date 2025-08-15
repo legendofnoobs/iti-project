@@ -1,12 +1,13 @@
 @import url(./navbarStyle.css);
+@import url(./footerStyle.css);
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-/* Hero Section */
 .hero {
     background: url('../assets/Hero.png') center/cover no-repeat;
     height: 500px;
