@@ -35,14 +35,9 @@
   flex-direction: column;
 }
 
-.billing-form label{
+.billing-form label {
   font-size: 12px;
   color: #888888;
-}
-
-.billing-form .error-message{
-   font-size: 12px;
-   color: #ff000098;
 }
 
 .billing-form label::after {
@@ -105,17 +100,18 @@
 
 .place-order-btn-locate {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.place-order-btn {
+#place-order-btn {
   background-color: #d6763c;
   color: white;
   padding: 14px 36px;
   border: none;
 }
 
-.place-order-btn:hover {
+#place-order-btn:hover {
   background-color: #bb6839;
   cursor: pointer;
 }
@@ -126,7 +122,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -139,17 +135,20 @@
   padding: 60px 40px;
 }
 
+.error-message {
+  padding: 2px 5px 5px 5px;
+  font-size: 12px;
+  color: #ff000098;
+}
 
 @media (min-width: 601px) and (max-width: 900px) {
   .place-order-btn-locate {
-    display: flex;
-    justify-content: flex-end;
+    align-items: flex-end;
   }
 }
 
 @media (min-width: 901px) {
   .place-order-btn-locate {
-    display: flex;
-    justify-content: flex-end;
+    align-items: flex-end;
   }
 }
