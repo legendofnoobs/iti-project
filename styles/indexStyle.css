@@ -1,12 +1,13 @@
 @import url(./navbarStyle.css);
+@import url(./footerStyle.css);
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
-/* Hero Section */
 .hero {
     background: url('../assets/Hero.png') center/cover no-repeat;
     height: 500px;
@@ -37,7 +38,6 @@
     font-weight: bold;
 }
 
-/* New Arrivals Section */
 .new-arrivals {
     text-align: center;
     padding: 50px 50px;
@@ -92,7 +92,6 @@
     color: #024E82 !important;
 }
 
-/* Features Section */
 .features {
     display: flex;
     justify-content: space-around;
@@ -128,7 +127,6 @@
     }
 }
 
-/* Promotions Section */
 .promotions {
     display: flex;
     gap: 20px;
@@ -143,7 +141,6 @@
 }
 
 .promotion-card {
-    /* flex: 1; */
     background: black;
     color: white;
     text-align: center;
@@ -172,7 +169,6 @@
     border-radius: 3px;
 }
 
-/* Top Sellers Section */
 .top-sellers {
     text-align: center;
     padding: 50px 50px;

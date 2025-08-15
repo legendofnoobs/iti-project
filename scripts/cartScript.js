@@ -25,14 +25,8 @@ if (localStorage.getItem('cartItem')) {
     updateTotals();
 }
 
-if (localStorage.getItem('cart_quantity')) {
-    quantity.value = localStorage.getItem('cart_quantity');
-    updateTotals();
-}
-
 quantity.addEventListener('input', () => {
     if (quantity.value < 1) quantity.value = 1;
-    localStorage.setItem('cart_quantity', quantity.value);
     updateTotals();
 });
 
@@ -41,7 +35,6 @@ removeButton.addEventListener('click', () => {
     subtotalElement.textContent = '$0.00';
     totalElement.textContent = '$0.00';
     localStorage.removeItem('cartItem');
-    localStorage.removeItem('cart_quantity');
     alert('item removed from cart.');
 });
 
@@ -62,10 +55,6 @@ const cancelButtonCheckout = document.getElementById('cancel_checkout');
 checkoutButton.addEventListener('click', (e) => {
     e.preventDefault();
     checkoutConfirmPopup.style.display = 'block';
-});
-
-confirmButtonCheckout.addEventListener('click', () => {
-    window.location.href = 'checkout.html';
 });
 
 cancelButtonCheckout.addEventListener('click', () => {
