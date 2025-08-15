@@ -1,3 +1,15 @@
+function showPopup() {
+  const popup = document.createElement("div");
+  popup.id = "popup";
+  const popupContent = document.createElement("p");
+  popupContent.innerText = "Order placed successfully 🙌";
+  popupContent.classList.add("popup-content");
+  popup.appendChild(popupContent);
+  const footer = document.getElementById("footer");
+  document.body.insertBefore(popup, footer);
+  document.getElementById("popup").style.display = "flex";
+}
+
 function createErrorMessageAndFocus(element, message) {
   if (!element.nextElementSibling) {
     const errorMessege = document.createElement("p");
@@ -9,8 +21,13 @@ function createErrorMessageAndFocus(element, message) {
   element.focus();
 }
 
+function clearErrorMessage(element) {
+  element.nextElementSibling?.remove();
+}
+
 function handleSubmit(event) {
   event.preventDefault();
+  const placeOrderButton = document.getElementById("place-order-btn");
   const fullName = document.querySelector(`input[name="billing-form-fullName"`);
   const streetAddress = document.querySelector(
     `input[name="billing-form-streetAddress"]`
@@ -18,6 +35,8 @@ function handleSubmit(event) {
   const town = document.querySelector(`input[name="billing-form-town"]`);
   const phone = document.querySelector(`input[name="billing-form-phone"]`);
   const email = document.querySelector(`input[name="billing-form-email"]`);
+  
+  clearErrorMessage(placeOrderButton);
 
   if (!/^[a-zA-Z\s-]+$/.test(fullName.value.trim())) {
     createErrorMessageAndFocus(
@@ -74,25 +93,8 @@ function handleSubmit(event) {
       }, 3000);
     })
     .catch(() =>{
-      const placeOrderButton = document.getElementById("place-order-btn");
       createErrorMessageAndFocus(placeOrderButton,"Try again later, Please :(")
     });
-}
-
-function clearErrorMessage(element) {
-  element.nextElementSibling?.remove();
-}
-
-function showPopup() {
-  const popup = document.createElement("div");
-  popup.id = "popup";
-  const popupContent = document.createElement("p");
-  popupContent.innerText = "Order placed successfully 🙌";
-  popupContent.classList.add("popup-content");
-  popup.appendChild(popupContent);
-  const footer = document.getElementById("footer");
-  document.body.insertBefore(popup, footer);
-  document.getElementById("popup").style.display = "flex";
 }
 
 //load data from cart
