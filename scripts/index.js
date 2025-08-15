@@ -3,7 +3,7 @@ async function loadProducts() {
     const products = await response.json();
 
     const productGrid = document.querySelector('.new-arrivals .product-grid');
-    productGrid.innerHTML = ''; // Clear existing products
+    productGrid.innerHTML = '';
 
     products.forEach(product => {
         const productCard = document.createElement('div');
@@ -40,7 +40,7 @@ async function loadTopSellers() {
     const products = await response.json();
 
     const productGrid = document.querySelector('.top-sellers .product-grid');
-    productGrid.innerHTML = ''; // Clear existing products
+    productGrid.innerHTML = '';
 
     products.forEach(product => {
         const productCard = document.createElement('div');
