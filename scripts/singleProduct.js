@@ -13,8 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('product-discount').textContent = `-${selectedProduct.discount}%`;
     } else {
-        // Handle the case where there's no product data (e.g., redirect to home)
-        window.location.href = '../index.html'; // Redirect to homepage
+        window.location.href = '../index.html';
     }
 
     const addToCartButton = document.querySelector('.add-to-cart-btn');
