@@ -99,7 +99,8 @@ function handleSubmit(event) {
     return;
   }
 
- /* just any api that make response.ok = true */ fetch("https://jsonplaceholder.typicode.com/posts", {
+ /* just any api that make response.ok = true */ 
+  fetch("https://jsonplaceholder.typicode.com/posts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
