@@ -89,7 +89,7 @@ function handleSubmit(event) {
   if (!/^[0-9]{11}$/.test(phone.value.trim())) {
     createErrorMessageAndFocus(
       phone,
-      "Please enter the phone with 11 numbers only !"
+      "Please enter the phone with 11 digits only !"
     );
     return;
   }
