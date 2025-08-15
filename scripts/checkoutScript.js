@@ -1,3 +1,25 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".checkout-container");
+  const inputs = form.querySelectorAll("input");
+
+  form.addEventListener("submit", handleSubmit);
+  inputs.forEach((element) => {
+    element.addEventListener("input", () => clearErrorMessage(element));
+  });
+
+  const checkoutData = JSON.parse(localStorage.getItem("checkout_data"));
+  if (checkoutData) {
+    document.querySelector(
+      ".order-product"
+    ).innerText = `${checkoutData.product} × ${checkoutData.quantity}`;
+    document.querySelector(".order-product-price").innerText = `$${(
+      checkoutData.price * checkoutData.quantity
+    ).toFixed(2)}`;
+    document.getElementById("subTotal").innerText = `$${checkoutData.subtotal}`;
+    document.querySelector(".order-total").innerText = `$${checkoutData.total}`;
+  }
+});
+
 function showPopup() {
   const popup = document.createElement("div");
   popup.id = "popup";
@@ -7,6 +29,7 @@ function showPopup() {
   popup.appendChild(popupContent);
   const footer = document.getElementById("footer");
   document.body.insertBefore(popup, footer);
+
   document.getElementById("popup").style.display = "flex";
 }
 
@@ -17,6 +40,7 @@ function createErrorMessageAndFocus(element, message) {
     errorMessege.classList.add("error-message");
     element.parentNode.appendChild(errorMessege);
   }
+
   element.scrollIntoView({ behavior: "smooth" });
   element.focus();
 }
@@ -27,6 +51,7 @@ function clearErrorMessage(element) {
 
 function handleSubmit(event) {
   event.preventDefault();
+
   const placeOrderButton = document.getElementById("place-order-btn");
   const fullName = document.querySelector(`input[name="billing-form-fullName"`);
   const streetAddress = document.querySelector(
@@ -35,8 +60,8 @@ function handleSubmit(event) {
   const town = document.querySelector(`input[name="billing-form-town"]`);
   const phone = document.querySelector(`input[name="billing-form-phone"]`);
   const email = document.querySelector(`input[name="billing-form-email"]`);
-  const checkoutData = JSON.parse(localStorage.getItem("checkout_data"));
 
+  const checkoutData = JSON.parse(localStorage.getItem("checkout_data"));
 
   clearErrorMessage(placeOrderButton);
 
@@ -79,7 +104,14 @@ function handleSubmit(event) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ fullName, streetAddress, town, phone, email, checkoutData }),
+    body: JSON.stringify({
+      fullName,
+      streetAddress,
+      town,
+      phone,
+      email,
+      checkoutData,
+    }),
   })
     .then((response) => {
       if (!response.ok) {
@@ -91,6 +123,7 @@ function handleSubmit(event) {
       showPopup();
       event.target.reset();
       setTimeout(() => {
+        localStorage.removeItem("checkout_data");
         window.location.href = "../index.html";
       }, 3000);
     })
@@ -101,20 +134,3 @@ function handleSubmit(event) {
       );
     });
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  const checkoutData = JSON.parse(localStorage.getItem("checkout_data"));
-  if (checkoutData) {
-    document.querySelector(
-      ".order-product"
-    ).innerText = `${checkoutData.product} × ${checkoutData.quantity}`;
-
-    document.querySelector(".order-product-price").innerText = `$${(
-      checkoutData.price * checkoutData.quantity
-    ).toFixed(2)}`;
-
-    document.getElementById("subTotal").innerText = `$${checkoutData.subtotal}`;
-
-    document.querySelector(".order-total").innerText = `$${checkoutData.total}`;
-  }
-});

@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="navbar"></div>
-    <form class="checkout-container" method="post" onsubmit="return handleSubmit(event)" novalidate>
+    <form class="checkout-container" method="post" novalidate>
       <p class="checkout-path">
         home / <span class="checkout-path-here">checkout</span>
       </p>
@@ -17,7 +17,7 @@
       <div class="billing-form">
         <div class="billing-form-field">
           <label>Full Name</label>
-          <input name="billing-form-fullName" type="text" required oninput="clearErrorMessage(this)"/>
+          <input name="billing-form-fullName" type="text" required/>
         </div>
         <div class="billing-form-field">
           <label>Street address</label>
@@ -26,20 +26,19 @@
             type="text"
             placeholder="House number and street name"
             required
-            oninput="clearErrorMessage(this)"
           />
         </div>
         <div class="billing-form-field">
           <label>Town / City</label>
-          <input name="billing-form-town" type="text" required oninput="clearErrorMessage(this)"/>
+          <input name="billing-form-town" type="text" required/>
         </div>
         <div class="billing-form-field">
           <label>Phone</label>
-          <input name="billing-form-phone" type="text" required oninput="clearErrorMessage(this)"/>
+          <input name="billing-form-phone" type="text" required/>
         </div>
         <div class="billing-form-field">
           <label>Email address</label>
-          <input name="billing-form-email" type="email" required oninput="clearErrorMessage(this)"/>
+          <input name="billing-form-email" type="email" required/>
         </div>
       </div>
       <h2>Your order</h2>
