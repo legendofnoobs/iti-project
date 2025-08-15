@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Knit Cardigan",
+        "priceBefore": 45,
+        "priceAfter": 40,
+        "ShortDescription": "Warm knit cardigan.",
+        "image": "../assets/clothes/cardigan1.jpg",
+        "category": "Cardigans",
+        "tags": [
+            "casual",
+            "winter"
+        ],
+        "TallDescription": "Comfortable and warm.",
+        "discount": 11,
+        "rate": 4.1
+    },
+    {
+        "name": "Basic Tank Top",
+        "priceBefore": 25,
+        "priceAfter": 22,
+        "ShortDescription": "Essential basic tank top.",
+        "image": "../assets/clothes/tanktop1.jpg",
+        "category": "Tops",
+        "tags": [
+            "casual",
+            "summer"
+        ],
+        "TallDescription": "Perfect for layering.",
+        "discount": 12,
+        "rate": 4.4
+    }
+]

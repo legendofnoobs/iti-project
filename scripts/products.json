@@ -1,0 +1,122 @@
+[
+    {
+        "name": "White Shirt",
+        "priceBefore": 30,
+        "priceAfter": 25,
+        "ShortDescription": "Modern urban-style white t-shirt.",
+        "image": "../assets/home1.png",
+        "category": "T-Shirts",
+        "tags": [
+            "casual",
+            "urban"
+        ],
+        "TallDescription": "A trendy white t-shirt for the city streets, offering a modern urban style and a comfortable fit.",
+        "discount": 17,
+        "rate": 4.3
+    },
+    {
+        "name": "Denim Jacket ",
+        "priceBefore": 70,
+        "priceAfter": 60,
+        "ShortDescription": "A classic denim jacket with a relaxed fit.",
+        "image": "../assets/home2.png",
+        "category": "Jeans",
+        "tags": [
+            "casual",
+            "denim"
+        ],
+        "TallDescription": "This comfortable denim jacket is a timeless classic, featuring a relaxed fit that's perfect for layering and completing any casual outfit.",
+        "discount": 14,
+        "rate": 4.6
+    },
+    {
+        "name": "Wool Blend Sweater",
+        "priceBefore": 50,
+        "priceAfter": 45,
+        "ShortDescription": "Soft, warm sweater made from a wool blend.",
+        "image": "../assets/Rectangle 1 (1).png",
+        "category": "Sweaters",
+        "tags": [
+            "winter",
+            "warm"
+        ],
+        "TallDescription": "A top-quality sweater made from a soft wool blend, designed to keep you warm and cozy during the winter months.",
+        "discount": 10,
+        "rate": 4.1
+    },
+    {
+        "name": "Blue Shirt",
+        "priceBefore": 90,
+        "priceAfter": 80,
+        "ShortDescription": "A versatile blue button-down shirt.",
+        "image": "../assets/Rectangle 1 (2).png",
+        "category": "Jackets",
+        "tags": [
+            "casual",
+            "outerwear"
+        ],
+        "TallDescription": "This stylish blue button-down shirt is perfect for layering, adding a casual yet polished look that can complete any outfit.",
+        "discount": 11,
+        "rate": 4.8
+    },
+    {
+        "name": "Navy Shirt",
+        "priceBefore": 65,
+        "priceAfter": 55,
+        "ShortDescription": "A flowy, casual navy shirt.",
+        "image": "../assets/Rectangle 1 (3).png",
+        "category": "Dresses",
+        "tags": [
+            "summer",
+            "vacation"
+        ],
+        "TallDescription": "This breezy navy shirt is perfect for sunny days and vacation getaways, offering a lightweight and flowy feel.",
+        "discount": 15,
+        "rate": 4.4
+    },
+    {
+        "name": "White T-shirt",
+        "priceBefore": 35,
+        "priceAfter": 30,
+        "ShortDescription": "Classic oxford-style white t-shirt.",
+        "image": "../assets/Rectangle 1 (4).png",
+        "category": "Shirts",
+        "tags": [
+            "formal",
+            "business"
+        ],
+        "TallDescription": "A classic white t-shirt with an oxford-style fit, perfect for a clean, formal, or business-casual look.",
+        "discount": 14,
+        "rate": 4.2
+    },
+    {
+        "name": "White Shirt",
+        "priceBefore": 40,
+        "priceAfter": 35,
+        "ShortDescription": "Durable white cargo shorts.",
+        "image": "../assets/Rectangle 1 (5).png",
+        "category": "Shorts",
+        "tags": [
+            "casual",
+            "outdoor"
+        ],
+        "TallDescription": "Durable white cargo shorts with a practical design, perfect for casual outdoor wear.",
+        "discount": 13,
+        "rate": 4.5
+    },
+    {
+        "name": "Gray T-shirt",
+        "priceBefore": 50,
+        "priceAfter": 45,
+        "ShortDescription": "Elegant gray pleated skirt.",
+        "image": "../assets/Rectangle 1 (6).png",
+        "category": "Skirts",
+        "tags": [
+            "formal",
+            "office"
+        ],
+        "TallDescription": "An elegant gray pleated skirt that provides a sophisticated and professional look, ideal for office wear.",
+        "discount": 10,
+        "rate": 4.0
+    }
+]

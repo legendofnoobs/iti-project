@@ -47,7 +47,7 @@ function handleSubmit(event) {
   showPopup();
 
   setTimeout(()=>{
-    event.target.submit();
+    window.location.href="../index.html";
   },3000);
 }
 
