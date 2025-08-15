@@ -6,7 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const messageBox = document.getElementById('messageBox');
     const overlay = document.getElementById('overlay');
     const closeButton = document.getElementById('closeButton');
-
+    document.getElementById('messageError').style.display = 'none';
+    document.getElementById('nameError').style.display = 'none';
+    document.getElementById('emailError').style.display = 'none';
+    
     function showMessageBox() {
         messageBox.classList.add('show');
         overlay.style.display = 'block';
@@ -27,6 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (nameInput.value.trim() === '') {
             document.getElementById('nameError').style.display = 'block';
+            nameInput.parentElement.parentElement.classList.add('error');
+            isValid = false;
+        }
+
+        if (emailInput.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim())) {
+            document.getElementById('emailError').style.display = 'block';
             nameInput.parentElement.parentElement.classList.add('error');
             isValid = false;
         }

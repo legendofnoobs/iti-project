@@ -8,7 +8,7 @@
     font-family: sans-serif;
 }
 
-.hero {
+.hero-index {
     background: url('../assets/Hero.png') center/cover no-repeat;
     height: 500px;
     display: flex;
