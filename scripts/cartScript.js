@@ -64,10 +64,6 @@ checkoutButton.addEventListener('click', (e) => {
     checkoutConfirmPopup.style.display = 'block';
 });
 
-confirmButtonCheckout.addEventListener('click', () => {
-    window.location.href = 'checkout.html';
-});
-
 cancelButtonCheckout.addEventListener('click', () => {
     checkoutConfirmPopup.style.display = 'none';
 });
