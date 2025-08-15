@@ -35,7 +35,9 @@ function handleSubmit(event) {
   const town = document.querySelector(`input[name="billing-form-town"]`);
   const phone = document.querySelector(`input[name="billing-form-phone"]`);
   const email = document.querySelector(`input[name="billing-form-email"]`);
-  
+  const checkoutData = JSON.parse(localStorage.getItem("checkout_data"));
+
+
   clearErrorMessage(placeOrderButton);
 
   if (!/^[a-zA-Z\s-]+$/.test(fullName.value.trim())) {
@@ -77,7 +79,7 @@ function handleSubmit(event) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ fullName, streetAddress, town, phone, email }),
+    body: JSON.stringify({ fullName, streetAddress, town, phone, email, checkoutData }),
   })
     .then((response) => {
       if (!response.ok) {
@@ -92,27 +94,27 @@ function handleSubmit(event) {
         window.location.href = "../index.html";
       }, 3000);
     })
-    .catch(() =>{
-      createErrorMessageAndFocus(placeOrderButton,"Try again later, Please :(")
+    .catch(() => {
+      createErrorMessageAndFocus(
+        placeOrderButton,
+        "Try again later, Please :("
+      );
     });
 }
 
-//load data from cart
 document.addEventListener("DOMContentLoaded", () => {
   const checkoutData = JSON.parse(localStorage.getItem("checkout_data"));
-
   if (checkoutData) {
     document.querySelector(
       ".order-product"
-    ).textContent = `${checkoutData.product} × ${checkoutData.quantity}`;
-    document.querySelector(".order-product-price").textContent = `$${(
+    ).innerText = `${checkoutData.product} × ${checkoutData.quantity}`;
+
+    document.querySelector(".order-product-price").innerText = `$${(
       checkoutData.price * checkoutData.quantity
     ).toFixed(2)}`;
-    document.querySelectorAll(
-      "tbody tr:nth-child(2) td:last-child"
-    )[0].textContent = `$${checkoutData.subtotal}`;
-    document.querySelector(
-      ".order-total"
-    ).textContent = `$${checkoutData.total}`;
+
+    document.getElementById("subTotal").innerText = `$${checkoutData.subtotal}`;
+
+    document.querySelector(".order-total").innerText = `$${checkoutData.total}`;
   }
 });
