@@ -106,12 +106,12 @@ function handleSubmit(event) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      fullName,
-      streetAddress,
-      town,
-      phone,
-      email,
-      checkoutData,
+      fullName:fullName.value,
+      streetAddress:streetAddress.value,
+      town:town.value,
+      phone:phone.value,
+      email:email.value,
+      checkoutData:checkoutData,
     }),
   })
     .then((response) => {
@@ -125,7 +125,7 @@ function handleSubmit(event) {
       event.target.reset();
       setTimeout(() => {
         localStorage.removeItem("checkout_data");
-        window.location.href = "../index.html";
+        // window.location.href = "../index.html";
       }, 3000);
     })
     .catch(() => {
