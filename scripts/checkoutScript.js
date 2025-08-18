@@ -125,7 +125,7 @@ function handleSubmit(event) {
       event.target.reset();
       setTimeout(() => {
         localStorage.removeItem("checkout_data");
-        // window.location.href = "../index.html";
+        window.location.href = "../index.html";
       }, 3000);
     })
     .catch(() => {
