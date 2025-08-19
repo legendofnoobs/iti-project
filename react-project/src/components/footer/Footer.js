@@ -127,16 +127,16 @@ export function Footer() {
         </div>
         <div className={style.lowerFooterRightSide}>
           <a href="#">
-            <img src="../assets/footerVisa.jpg" alt="Visa" />
+            <img src="../../assets/images/footerVisa.jpg" alt="Visa" />
           </a>
           <a href="#">
-            <img src="../assets/footerMasterCard.jpg" alt="MasterCard" />
+            <img src="../../assets/images/footerMasterCard.jpg" alt="MasterCard" />
           </a>
           <a href="#">
-            <img src="../assets/footerPayPal.jpg" alt="PayPal" />
+            <img src="../../assets/images/footerPayPal.jpg" alt="PayPal" />
           </a>
           <a href="#">
-            <img src="../assets/footerVisaElectron.jpg" alt="Visa Electron" />
+            <img src="../../assets/images/footerVisaElectron.jpg" alt="Visa Electron" />
           </a>
         </div>
       </div>
