@@ -4,7 +4,7 @@ import MasterCard from "../../assets/images/footerMasterCard.jpg";
 import PayPal from "../../assets/images/footerPayPal.jpg"
 import VisaElectron from "../../assets/images/footerVisaElectron.jpg"
 
-export function Footer() {
+export default function Footer() {
   const createErrorMessageAndFocus = (element, message) => {
     if (!element.nextElementSibling) {
       const errorMessege = document.createElement("p");

@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -69,15 +70,15 @@
   color: #555555;
 }
 
-.orderSummary .orderProduct {
+.orderProduct {
   padding-left: 30px;
 }
 
-.orderSummary .orderProductPrice {
+.orderProductPrice {
   color: #1d1d1d;
 }
 
-.orderSummary .orderTotal {
+.orderTotal {
   font-weight: bold;
   color: #1d1d1d;
 }

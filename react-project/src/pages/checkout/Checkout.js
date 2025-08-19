@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./checout.module.css";
 
-export function Checkout() {
+export default function Checkout() {
   const navigate = useNavigate();
-  const [checkoutData, setCheckoutData] = useState(null);
+  const [checkoutData, setCheckoutData] = useState({});
   const [popupIsOpened, setPopupIsOpened] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [inputs, setInputs] = useState({});
@@ -100,7 +100,7 @@ export function Checkout() {
       <form
         className={style.checkoutContainer}
         method="post"
-        novalidate
+        noValidate
         onSubmit={handleSubmit}
       >
         <p className={style.checkoutPath}>
