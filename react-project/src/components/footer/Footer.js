@@ -1,4 +1,9 @@
 import style from "./footer.module.css";
+import Visa from "../../assets/images/footerVisa.jpg";
+import MasterCard from "../../assets/images/footerMasterCard.jpg";
+import PayPal from "../../assets/images/footerPayPal.jpg"
+import VisaElectron from "../../assets/images/footerVisaElectron.jpg"
+
 export function Footer() {
   const createErrorMessageAndFocus = (element, message) => {
     if (!element.nextElementSibling) {
@@ -127,16 +132,16 @@ export function Footer() {
         </div>
         <div className={style.lowerFooterRightSide}>
           <a href="#">
-            <img src="../../assets/images/footerVisa.jpg" alt="Visa" />
+            <img src={Visa} alt="Visa" />
           </a>
           <a href="#">
-            <img src="../../assets/images/footerMasterCard.jpg" alt="MasterCard" />
+            <img src={MasterCard} alt="MasterCard" />
           </a>
           <a href="#">
-            <img src="../../assets/images/footerPayPal.jpg" alt="PayPal" />
+            <img src={PayPal} alt="PayPal" />
           </a>
           <a href="#">
-            <img src="../../assets/images/footerVisaElectron.jpg" alt="Visa Electron" />
+            <img src={VisaElectron} alt="Visa Electron" />
           </a>
         </div>
       </div>
