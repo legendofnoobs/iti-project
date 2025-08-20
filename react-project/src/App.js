@@ -5,6 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import SingleProduct from "./pages/singleProduct/SingleProduct";
 import About from "./pages/about/About";
+import Cart from "./pages/cart/Cart";
 import { DataProvider } from "./store/DataContext";
 import "./App.css";
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/single-product" element={<SingleProduct />} />
         </Routes>

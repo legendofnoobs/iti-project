@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import "./cart.css";
 
-export default function ShoppingCart() {
+export default function Cart() {
   const navigate = useNavigate(); 
 
   const [cartItem, setCartItem] = useState(null);
