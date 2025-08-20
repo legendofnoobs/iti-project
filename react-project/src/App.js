@@ -16,20 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route
-            path="/checkout"
-            element={
-              <Checkout
-                checkoutData={{
-                  product: "Denim Jacket",
-                  quantity: 1,
-                  price: "60.00",
-                  subtotal: "60.00",
-                  total: "60.00",
-                }}
-              />
-            }
-          />
+          <Route path="/checkout" element={<Checkout />} />
           <Route path="/single-product" element={<SingleProduct />} />
         </Routes>
         <Footer />

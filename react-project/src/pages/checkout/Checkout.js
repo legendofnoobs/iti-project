@@ -1,9 +1,11 @@
 import "./checkout.css";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useData } from "../../store/DataContext";
 
-export default function Checkout({ checkoutData }) {
+export default function Checkout() {
   const navigate = useNavigate();
+  const { checkoutData } = useData();
   const [popupIsOpened, setPopupIsOpened] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [inputs, setInputs] = useState({});

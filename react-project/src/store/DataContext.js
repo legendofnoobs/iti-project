@@ -3,22 +3,15 @@ import { createContext, useContext, useState } from "react";
 const DataContext = createContext();
 
 export function DataProvider({ children }) {
-  const [data, setData] = useState({});
-  const cartData = (data) => {
-    setData((preValue) => {
-      return { ...preValue, cardData: data };
-    });
-  };
-  const checkoutData = (data) => {
-    setData((preValue) => {
-      return { ...preValue, checkoutData: data };
-    });
-  };
+  const [cartData, setCartData] = useState(null);
+  const [checkoutData, setCheckoutData] = useState(null);
   return (
-    <DataContext.Provider value={(data, cartData, checkoutData)}>
+    <DataContext.Provider
+      value={{ cartData, checkoutData, setCartData, setCheckoutData }}
+    >
       {children}
     </DataContext.Provider>
   );
-};
+}
 
-export const useData =()=>useContext(DataContext);
+export const useData = () => useContext(DataContext);
