@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Red Shirt",
+        "priceBefore": 37,
+        "priceAfter": 32,
+        "ShortDescription": "Stylish ribbed crop top.",
+        "image": "/assets/images/Rectangle 1 (7).png",
+        "category": "Tops",
+        "tags": [
+            "casual",
+            "party"
+        ],
+        "TallDescription": "Trendy and comfy.",
+        "discount": 14,
+        "rate": 4.7
+    },
+    {
+        "name": "Gray T-shirt",
+        "priceBefore": 60,
+        "priceAfter": 55,
+        "ShortDescription": "Versatile chino pants.",
+        "image": "/assets/images/Rectangle 1 (8).png",
+        "category": "Pants",
+        "tags": [
+            "casual",
+            "smart-casual"
+        ],
+        "TallDescription": "Easy to style.",
+        "discount": 8,
+        "rate": 4.0
+    },
+    {
+        "name": "Loose White shirt",
+        "priceBefore": 55,
+        "priceAfter": 50,
+        "ShortDescription": "Cozy fleece hoodie.",
+        "image": "/assets/images/Rectangle 1 (9).png",
+        "category": "Hoodies",
+        "tags": [
+            "casual",
+            "loungewear"
+        ],
+        "TallDescription": "Super soft fleece.",
+        "discount": 9,
+        "rate": 4.3
+    },
+    {
+        "name": "Black Polo",
+        "priceBefore": 100,
+        "priceAfter": 90,
+        "ShortDescription": "Sophisticated tailored blazer.",
+        "image": "/assets/images/Rectangle 1.png",
+        "category": "Blazers",
+        "tags": [
+            "formal",
+            "business"
+        ],
+        "TallDescription": "Refined silhouette.",
+        "discount": 10,
+        "rate": 4.6
+    }
+]
