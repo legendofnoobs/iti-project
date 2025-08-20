@@ -70,15 +70,15 @@
   color: #555555;
 }
 
-.orderProduct {
+#orderProduct {
   padding-left: 30px; 
 }
 
-.orderProductPrice {
+#orderProductPrice {
   color: #1d1d1d;
 }
 
-.orderTotal {
+#orderTotal {
   font-weight: bold;
   color: #1d1d1d;
 }
@@ -118,7 +118,7 @@
 }
 
 #popup {
-  display: none;
+  display: flex;
   position: fixed;
   top: 0;
   width: 100%;

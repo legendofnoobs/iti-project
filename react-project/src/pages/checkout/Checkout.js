@@ -1,22 +1,25 @@
 import "./checkout.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Checkout() {
+export default function Checkout({ checkoutData }) {
   const navigate = useNavigate();
-  const [checkoutData, setCheckoutData] = useState({});
   const [popupIsOpened, setPopupIsOpened] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [inputs, setInputs] = useState({});
   const [errors, setErrors] = useState({});
+  const inputsRef = {
+    fullName: useRef(),
+    streetAddress: useRef(),
+    town: useRef(),
+    phone: useRef(),
+    email: useRef(),
+  };
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("checkout_data"));
-    if (!data) {
+    if (!checkoutData) {
       showPopup("Please choose product");
       setTimeout(() => navigate("/home"), 3000);
-    } else {
-      setCheckoutData(data);
     }
   }, []);
 
@@ -31,7 +34,6 @@ export default function Checkout() {
     });
 
     setErrors(({ [event.target.name]: removed, placeOrder, ...rest }) => rest);
-    console.log(inputs + "\n" + errors);
   };
 
   const handleSubmit = (event) => {
@@ -62,6 +64,13 @@ export default function Checkout() {
 
     setErrors(newErrors);
 
+    for (const key in inputsRef) {
+      if (key in newErrors) {
+        inputsRef[key].current.focus();
+        break;
+      }
+    }
+
     if (Object.keys(newErrors).length !== 0) return;
 
     /* just any api that make response.ok = true */
@@ -82,10 +91,9 @@ export default function Checkout() {
         return response.json();
       })
       .then(() => {
-        showPopup("Order placed successfully &#128588");
+        showPopup("Order placed successfully 🙌");
         event.target.reset();
         setTimeout(() => {
-          localStorage.removeItem("checkout_data");
           navigate("/home");
         }, 3000);
       })
@@ -97,124 +105,131 @@ export default function Checkout() {
   };
 
   return (
-    <form
-      className="checkoutContainer"
-      method="post"
-      noValidate
-      onSubmit={handleSubmit}
-    >
-      <p className="checkoutPath">
-        home / <span className="checkoutPathHere">checkout</span>
-      </p>
-      <h2>Billing details</h2>
-      <div className="billingForm">
-        <div className="billingFormField">
-          <label htmlFor="fullName">Full Name</label>
-          <input
-            id="fullName"
-            name="fullName"
-            type="text"
-            value={inputs.fullName || ""}
-            onChange={handleChange}
-          />
-          {errors.fullName && (
-            <p className="errorMessage">{errors.fullName}</p>
-          )}
+    <>
+      <form
+        className="checkoutContainer"
+        method="post"
+        noValidate
+        onSubmit={handleSubmit}
+      >
+        <p className="checkoutPath">
+          home / <span className="checkoutPathHere">checkout</span>
+        </p>
+        <h2>Billing details</h2>
+        <div className="billingForm">
+          <div className="billingFormField">
+            <label htmlFor="fullName">Full Name</label>
+            <input
+              ref={inputsRef.fullName}
+              id="fullName"
+              name="fullName"
+              type="text"
+              value={inputs.fullName || ""}
+              onChange={handleChange}
+            />
+            {errors.fullName && (
+              <p className="errorMessage">{errors.fullName}</p>
+            )}
+          </div>
+          <div className="billingFormField">
+            <label htmlFor="streetAddress">Street address</label>
+            <input
+              ref={inputsRef.streetAddress}
+              id="streetAddress"
+              name="streetAddress"
+              type="text"
+              placeholder="House number and street name"
+              value={inputs.streetAddress || ""}
+              onChange={handleChange}
+            />
+            {errors.streetAddress && (
+              <p className="errorMessage">{errors.streetAddress}</p>
+            )}
+          </div>
+          <div className="billingFormField">
+            <label htmlFor="town">Town / City</label>
+            <input
+              ref={inputsRef.town}
+              id="town"
+              name="town"
+              type="text"
+              value={inputs.town || ""}
+              onChange={handleChange}
+            />
+            {errors.town && <p className="errorMessage">{errors.town}</p>}
+          </div>
+          <div className="billingFormField">
+            <label htmlFor="phone">Phone</label>
+            <input
+              ref={inputsRef.phone}
+              id="phone"
+              name="phone"
+              type="text"
+              value={inputs.phone || ""}
+              onChange={handleChange}
+            />
+            {errors.phone && <p className="errorMessage">{errors.phone}</p>}
+          </div>
+          <div className="billingFormField">
+            <label htmlFor="email">Email address</label>
+            <input
+              ref={inputsRef.email}
+              id="email"
+              name="email"
+              type="email"
+              value={inputs.email || ""}
+              onChange={handleChange}
+            />
+            {errors.email && <p className="errorMessage">{errors.email}</p>}
+          </div>
         </div>
-        <div className="billingFormField">
-          <label htmlFor="streetAddress">Street address</label>
-          <input
-            id="streetAddress"
-            name="streetAddress"
-            type="text"
-            placeholder="House number and street name"
-            value={inputs.streetAddress || ""}
-            onChange={handleChange}
-          />
-          {errors.streetAddress && (
-            <p className="errorMessage">{errors.streetAddress}</p>
-          )}
+        <h2>Your order</h2>
+        <table className="orderSummary">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="orderProduct">
+                {checkoutData?.product} &times; {checkoutData?.quantity}
+              </td>
+              <td id="orderProductPrice">
+                {(checkoutData?.price * checkoutData?.quantity || 0).toFixed(2)}
+              </td>
+            </tr>
+            <tr>
+              <td>Subtotal</td>
+              <td>{checkoutData?.subtotal}</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td id="orderTotal">{checkoutData?.total}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div className="placeOrder">
+          <div className="paymentNote">
+            Cash on delivery. Please contact us if you require assistance or
+            wish to make alternate arrangements.
+          </div>
+          <div className="placeOrderBtnLocate">
+            <button id="placeOrderBtn" type="submit">
+              Place Order
+            </button>
+            {errors.placeOrder && (
+              <p className="errorMessage">{errors.placeOrder}</p>
+            )}
+          </div>
         </div>
-        <div className="billingFormField">
-          <label htmlFor="town">Town / City</label>
-          <input
-            id="town"
-            name="town"
-            type="text"
-            value={inputs.town || ""}
-            onChange={handleChange}
-          />
-          {errors.town && <p className="errorMessage">{errors.town}</p>}
-        </div>
-        <div className="billingFormField">
-          <label htmlFor="phone">Phone</label>
-          <input
-            id="phone"
-            name="phone"
-            type="text"
-            value={inputs.phone || ""}
-            onChange={handleChange}
-          />
-          {errors.phone && <p className="errorMessage">{errors.phone}</p>}
-        </div>
-        <div className="billingFormField">
-          <label htmlFor="email">Email address</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            value={inputs.email || ""}
-            onChange={handleChange}
-          />
-          {errors.email && <p className="errorMessage">{errors.email}</p>}
-        </div>
-      </div>
-      <h2>Your order</h2>
-      <table className="orderSummary">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td className="orderProduct">
-              {checkoutData?.product} &times; {checkoutData?.quantity}
-            </td>
-            <td className="orderProductPrice">
-              {(checkoutData?.price * checkoutData?.quantity || 0).toFixed(2)}
-            </td>
-          </tr>
-          <tr>
-            <td>Subtotal</td>
-            <td>{checkoutData?.subtotal}</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td className="orderTotal">{checkoutData?.total}</td>
-          </tr>
-        </tbody>
-      </table>
-      <div className="placeOrder">
-        <div className="paymentNote">
-          Cash on delivery. Please contact us if you require assistance or wish
-          to make alternate arrangements.
-        </div>
-        <div className="placeOrderBtnLocate">
-          <button id="placeOrderBtn" type="submit">
-            Place Order
-          </button>
-          {errors.placeOrder && (
-            <p className="errorMessage">{errors.placeOrder}</p>
-          )}
-        </div>
-      </div>
+      </form>
       {popupIsOpened && (
         <div id="popup">
           <p className="popupContent">{popupMessage}</p>
         </div>
       )}
-    </form>
+    </>
   );
 }

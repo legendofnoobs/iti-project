@@ -7,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Checkout />} />
+        <Route path="/checkout" element={<Checkout checkoutData={{"product":"Denim Jacket","quantity":1,"price":"60.00","subtotal":"60.00","total":"60.00"}}/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
