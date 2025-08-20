@@ -36,7 +36,7 @@
   flex-direction: column;
 }
 
-.billingFormLabel {
+.billingForm label {
   font-size: 12px;
   color: #888888;
 }
@@ -71,7 +71,7 @@
 }
 
 .orderProduct {
-  padding-left: 30px;
+  padding-left: 30px; 
 }
 
 .orderProductPrice {
@@ -105,19 +105,19 @@
   align-items: center;
 }
 
-.placeOrderBtn {
+#placeOrderBtn {
   background-color: #d6763c;
   color: white;
   padding: 14px 36px;
   border: none;
 }
 
-.PlaceOrderBtn:hover {
+#placeOrderBtn:hover {
   background-color: #bb6839;
   cursor: pointer;
 }
 
-.popup {
+#popup {
   display: none;
   position: fixed;
   top: 0;

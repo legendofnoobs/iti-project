@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Checkout from "./pages/checkout/Checkout";
 import Footer from "./components/footer/Footer";
@@ -8,7 +7,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/" element={<Checkout />} />
       </Routes>
       <Footer />
     </BrowserRouter>

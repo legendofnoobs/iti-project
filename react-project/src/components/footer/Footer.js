@@ -1,4 +1,4 @@
-import style from "./footer.module.css";
+import "./footer.css";
 import Visa from "../../assets/images/footerVisa.jpg";
 import MasterCard from "../../assets/images/footerMasterCard.jpg";
 import PayPal from "../../assets/images/footerPayPal.jpg"
@@ -54,67 +54,41 @@ export default function Footer() {
       });
   };
   return (
-    <div className={style.footerContainer}>
-      <div className={style.upperFooter}>
-        <div className={style.footerColumn}>
-          <p>company info</p>
-          <ul>
-            <li>
-              <a href="#">About Us</a>
-            </li>
-            <li>
-              <a href="#">Latest Posts</a>
-            </li>
-            <li>
-              <a href="#">Contact Us</a>
-            </li>
-            <li>
-              <a href="#">Shop</a>
-            </li>
-          </ul>
+    <footer id="footerContainer">
+    <div id="upperFooter">
+        <div className="footerColumn">
+            <p>company info</p>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Latest Posts</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Shop</a></li>
+            </ul>
         </div>
 
-        <div className={style.footerColumn}>
-          <p>help links</p>
-          <ul>
-            <li>
-              <a href="#">Tracking</a>
-            </li>
-            <li>
-              <a href="#">Order Status</a>
-            </li>
-            <li>
-              <a href="#">Delivery</a>
-            </li>
-            <li>
-              <a href="#">Shipping Info</a>
-            </li>
-            <li>
-              <a href="#">FAQ</a>
-            </li>
-          </ul>
+        <div className="footerColumn">
+            <p>help links</p>
+            <ul>
+                <li><a href="#">Tracking</a></li>
+                <li><a href="#">Order Status</a></li>
+                <li><a href="#">Delivery</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
         </div>
 
-        <div className={style.footerColumn}>
-          <p>useful links</p>
-          <ul>
-            <li>
-              <a href="#">Special Offers</a>
-            </li>
-            <li>
-              <a href="#">Gift Cards</a>
-            </li>
-            <li>
-              <a href="#">Advertising</a>
-            </li>
-            <li>
-              <a href="#">Terms of Use</a>
-            </li>
-          </ul>
+        <div className="footerColumn">
+            <p>useful links</p>
+            <ul>
+                <li><a href="#">Special Offers</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Terms of Use</a></li>
+            </ul>
         </div>
 
-        <div className={style.footerColumn}>
-          <p>get in the know</p>
+        <div className="footerColumn">
+            <p>get in the know</p>
           <form method="post" onSubmit={handleSubmit}>
             <input type="email" placeholder="Enter email" />
             <button type="submit">&rsaquo;</button>
@@ -122,16 +96,16 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className={style.lowerFooter}>
-        <div className={style.lowerFooterLeftSide}>
-          <p>&copy; 2020 NorthStar eCommerce</p>
-          <div className={style.policy}>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms & Conditions</a>
-          </div>
+      <div id="lowerFooter">
+        <div id="lowerFooterLeftSide">
+            <p id="copyRight">&copy; 2020 NorthStar eCommerce</p>
+            <div id="policy">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+            </div>
         </div>
-        <div className={style.lowerFooterRightSide}>
-          <a href="#">
+        <div id="lowerFooterRightSide">
+            <a href="#">
             <img src={Visa} alt="Visa" />
           </a>
           <a href="#">
@@ -145,6 +119,6 @@ export default function Footer() {
           </a>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
