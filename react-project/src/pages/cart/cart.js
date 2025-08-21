@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"; 
 import { useNavigate } from "react-router-dom"; 
 import "./cart.css";
+import { useData } from "../../store/DataContext";
 
 export default function Cart() {
   const navigate = useNavigate(); 
+  const { setCheckoutData } = useData();
 
   const [cartItem, setCartItem] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -53,7 +55,8 @@ export default function Cart() {
       subtotal,
       total: subtotal,
     };
-    localStorage.setItem("checkout_data", JSON.stringify(cartData));
+
+    setCheckoutData(cartData);
 
     navigate("/checkout");
   };
@@ -72,7 +75,7 @@ export default function Cart() {
             className="cart-path"
             onClick={() => navigate("/")} >
             HOME
-          </span>{" "}
+          </span>{" "} 
           / <span className="cart-path-here">SHOPPING CART</span>
         </p>
 
