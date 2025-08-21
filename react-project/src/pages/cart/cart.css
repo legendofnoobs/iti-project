@@ -137,6 +137,10 @@
   background-color: rgba(165, 143, 130, 0.4);
 }
 
+.checkout-popup.show {
+    display: block;
+}
+
 .checkout-popup-content {
   background: white;
   padding: 50px;

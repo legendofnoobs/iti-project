@@ -7,20 +7,23 @@ export default function Cart() {
   const navigate = useNavigate(); 
   const { cartData ,setCheckoutData } = useData();
 
-  const [cartItem, setCartItem] = useState(null);
+  const [cartItem, setCartItem] = useState(JSON.parse(localStorage.getItem("cartItem")));
   const [quantity, setQuantity] = useState(1);
   const [pricePerItem, setPricePerItem] = useState(0);
   const [subtotal, setSubtotal] = useState(0);
   const [showCheckoutPopup, setShowCheckoutPopup] = useState(false);
 
   useEffect(() => {
-    if (!cartData) {
+    if (cartData) {
       const item = cartData;
       setCartItem(item);
       setPricePerItem(item.priceAfter);
       setQuantity(item.quantity || 1);
+    } else if (cartItem) {
+        setPricePerItem(cartItem.priceAfter);
+        setQuantity(cartItem.quantity || 1);
     }
-  }, []);
+  }, [cartData, cartItem]);
 
   useEffect(() => {
     if (cartItem) {
@@ -148,7 +151,7 @@ export default function Cart() {
       </div>
 
       {showCheckoutPopup && (
-        <div id="checkout_confirm_popUp" className="checkout-popup">
+        <div id="checkout_confirm_popUp" className={`checkout-popup ${showCheckoutPopup ? 'show' : ''}`}>
           <div className="checkout-popup-content">
             <p>Are you sure you want to proceed to checkout?</p>
             <div className="checkout-popup-buttons">
