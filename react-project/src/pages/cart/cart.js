@@ -5,7 +5,7 @@ import { useData } from "../../store/DataContext";
 
 export default function Cart() {
   const navigate = useNavigate(); 
-  const { setCheckoutData } = useData();
+  const { cartData ,setCheckoutData } = useData();
 
   const [cartItem, setCartItem] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -14,8 +14,8 @@ export default function Cart() {
   const [showCheckoutPopup, setShowCheckoutPopup] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("cartItem")) {
-      const item = JSON.parse(localStorage.getItem("cartItem"));
+    if (!cartData) {
+      const item = cartData;
       setCartItem(item);
       setPricePerItem(item.priceAfter);
       setQuantity(item.quantity || 1);
