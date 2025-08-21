@@ -43,7 +43,7 @@ export default function Checkout() {
 
     const newErrors = {};
 
-    if (!/^[a-zA-Z\s-]+$/.test(inputs?.fullName || "")) {
+    if (!/^[a-zA-Z\s-]+$/.test(inputs.fullName || "")) {
       newErrors.fullName =
         "Please enter character from a to z or from A to Z !";
     }
@@ -56,11 +56,11 @@ export default function Checkout() {
       newErrors.town = "Please enter the town !";
     }
 
-    if (!/^[0-9]{11}$/.test(inputs.phone)) {
+    if (!/^[0-9]{11}$/.test(inputs.phone|| "")) {
       newErrors.phone = "Please enter the phone with 11 digits only !";
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputs.email)) {
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputs.email || "")) {
       newErrors.email = "Please enter email as lol@gmail.com";
     }
 
