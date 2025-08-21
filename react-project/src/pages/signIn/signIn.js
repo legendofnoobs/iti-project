@@ -61,7 +61,7 @@ export default function SignIn() {
         Don&apos;t have an account?{" "}
         <button
           type="button"
-          onClick={() => navigate("/signup")}
+          onClick={() => navigate("/signUp")}
         >
           Create one
         </button>

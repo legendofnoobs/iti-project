@@ -37,7 +37,7 @@ export default function SignUp() {
         if (!isvalid) {
           alert(messages.join("\n"));
         } else {
-          navigate("/signin");
+          navigate("/signIn");
         }
       });
     }
@@ -87,7 +87,7 @@ export default function SignUp() {
       </form>
       <div className="auth-footer">
         Already have an account?{" "}
-        <a onClick={() => navigate("/signin")}>Sign In</a>
+        <a onClick={() => navigate("/signIn")}>Sign In</a>
       </div>
     </section>
   );
