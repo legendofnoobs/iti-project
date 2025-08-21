@@ -5,7 +5,7 @@ import { useData } from "../../store/DataContext";
 
 export default function Checkout() {
   const navigate = useNavigate();
-  const { checkoutData } = useData();
+  const { checkoutData, setCartData, setCheckoutData} = useData();
   const [popupIsOpened, setPopupIsOpened] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [inputs, setInputs] = useState({});
@@ -21,7 +21,7 @@ export default function Checkout() {
   useEffect(() => {
     if (!checkoutData) {
       showPopup("Please choose product");
-      setTimeout(() => navigate("/home"), 3000);
+      setTimeout(() => navigate("/"), 3000);
     }
   }, []);
 
@@ -95,8 +95,10 @@ export default function Checkout() {
       .then(() => {
         showPopup("Order placed successfully 🙌");
         event.target.reset();
+        setCartData(null);
+        setCheckoutData(null);
         setTimeout(() => {
-          navigate("/home");
+          navigate("/");
         }, 3000);
       })
       .catch(() => {
