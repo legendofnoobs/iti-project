@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./signIn.css";
 
@@ -7,25 +7,30 @@ export default function SignIn() {
   const [emailinput, setEmailinput] = useState("");
   const [passwordinput, setPasswordinput] = useState("");
 
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    let isvalid = true;
-    let messages = [];
+    let newErrors = { email: "", password: "" };
+    let isValid = true;
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailinput)) {
-      isvalid = false;
-      messages.push("Enter a valid email address.");
+      newErrors.email = "Enter a valid email address.";
+      isValid = false;
     }
 
     if (passwordinput.trim().length < 6) {
-      isvalid = false;
-      messages.push("Password must be at least 6 characters.");
+      newErrors.password = "Password must be at least 6 characters.";
+      isValid = false;
     }
 
-    if (!isvalid) {
-      alert(messages.join("\n"));
-    } else {
+    setErrors(newErrors);
+
+    if (isValid) {
       navigate("/");
     }
   };
@@ -33,26 +38,27 @@ export default function SignIn() {
   return (
     <section className="auth-container">
       <h2 className="auth-title">Sign In</h2>
-      <form className="auth-form" onSubmit={handleSubmit}>
+      <form className="auth-form" onSubmit={handleSubmit} noValidate>
         <label htmlFor="email">Email</label>
         <input
-          type="email"
+          type="text"
           id="email"
           placeholder="Your Email"
-          required
           value={emailinput}
           onChange={(e) => setEmailinput(e.target.value)}
         />
+        
+         {errors.email && <p className="error">{errors.email}</p>}
 
         <label htmlFor="password">Password</label>
         <input
           type="password"
           id="password"
           placeholder="Password"
-          required
           value={passwordinput}
           onChange={(e) => setPasswordinput(e.target.value)}
         />
+       {errors.password && <p className="error">{errors.password}</p>}
 
         <button type="submit">Sign In</button>
       </form>

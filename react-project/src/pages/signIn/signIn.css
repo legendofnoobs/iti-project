@@ -60,3 +60,9 @@
 .auth-footer a:hover {
   text-decoration: underline;
 }
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 4px;
+}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./signUp.css";
 
@@ -9,44 +9,40 @@ export default function SignUp() {
     email: "",
     password: "",
   });
-  const [messages, setMessages] = useState([]); // store validation messages
 
-  useEffect(() => {
-    const form = document.querySelector(".auth-form");
+  const [errors, setErrors] = useState({
+    email: "",
+    password: "",
+  });
 
-    if (form) {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const emailinput = document.querySelector("#email");
-        const passwordinput = document.querySelector("#password");
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-        let isvalid = true;
-        let newMessages = [];
+    let newErrors = { email: "", password: "" };
+    let isValid = true;
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailinput.value)) {
-          isvalid = false;
-          newMessages.push("Enter a valid email address.");
-        }
-
-        if (passwordinput.value.trim().length < 6) {
-          isvalid = false;
-          newMessages.push("Password must be at least 6 characters.");
-        }
-
-        if (!isvalid) {
-          setMessages(newMessages); // show messages inside UI
-        } else {
-          setMessages([]); // clear errors
-          navigate("/signIn");
-        }
-      });
+   
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Enter a valid email address.";
+      isValid = false;
     }
-  }, [navigate]);
+
+    if (formData.password.trim().length < 6) {
+      newErrors.password = "Password must be at least 6 characters.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+
+    if (isValid) {
+      navigate("/signIn");
+    }
+  };
 
   return (
     <section className="auth-container">
       <h2 className="auth-title">Create Account</h2>
-      <form className="auth-form">
+      <form className="auth-form" onSubmit={handleSubmit} noValidate>
         <label htmlFor="name">Full Name</label>
         <input
           type="text"
@@ -61,40 +57,31 @@ export default function SignUp() {
 
         <label htmlFor="email">Email</label>
         <input
-          type="email"
+          type="text"
           id="email"
           placeholder="Your Email"
-          required
           value={formData.email}
           onChange={(e) =>
             setFormData({ ...formData, email: e.target.value })
           }
         />
+        {errors.email && <p className="error">{errors.email}</p>}
 
         <label htmlFor="password">Password</label>
         <input
           type="password"
           id="password"
           placeholder="Password"
-          required
           value={formData.password}
           onChange={(e) =>
             setFormData({ ...formData, password: e.target.value })
           }
         />
-        
-        {messages.length > 0 && (
-          <div className="error-messages">
-            {messages.map((msg, index) => (
-              <p key={index} style={{ color: "red", margin: 0 }}>
-                {msg}
-              </p>
-            ))}
-          </div>
-        )}
+        {errors.password && <p className="error">{errors.password}</p>}
 
         <button type="submit">Sign Up</button>
       </form>
+
       <div className="auth-footer">
         Already have an account?{" "}
         <a onClick={() => navigate("/signIn")}>Sign In</a>
