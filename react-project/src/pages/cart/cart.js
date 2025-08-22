@@ -48,15 +48,7 @@ export default function Cart() {
   };
 
   const confirmCheckout = () => {
-    const checkoutObj = {
-      product: cartItem?.name || "",
-      quantity,
-      price: pricePerItem.toFixed(2),
-      subtotal,
-      total: subtotal,
-    };
-
-    setCheckoutData(checkoutObj);
+    setCheckoutData(cartData);
     navigate("/checkout");
   };
 

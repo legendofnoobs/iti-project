@@ -19,6 +19,8 @@ export default function Checkout() {
   };
 
   useEffect(() => {
+    console.log(checkoutData);
+    
     if (!checkoutData) {
       showPopup("Please choose product");
       setTimeout(() => navigate("/"), 3000);
