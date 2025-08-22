@@ -3,12 +3,14 @@ import './singleProduct.css';
 import Navbar from '../../components/navbar/Navbar';
 import Footer from '../../components/footer/Footer';
 import { useNavigate } from 'react-router-dom';
+import { useData } from '../../store/DataContext';
 
 const SingleProduct = () => {
     const [product, setProduct] = useState({});
     const [activeTab, setActiveTab] = useState('description');
     const [selectedSize, setSelectedSize] = useState('');
     const navigate = useNavigate();
+    const { setCartData } = useData();
 
     useEffect(() => {
         const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
@@ -29,8 +31,8 @@ const SingleProduct = () => {
             size: selectedSize,
             quantity: 1
         };
-        localStorage.setItem('cartItem', JSON.stringify(cartItem));
-        window.location.href = '/cart';
+        setCartData(cartItem);
+        navigate('/cart');
     };
 
     if (!product.name) {
