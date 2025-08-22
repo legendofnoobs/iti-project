@@ -1,0 +1,38 @@
+
+{
+  "founders": [
+    {
+      "name": "HM Jawwad",
+      "image": "../../assets/images/about4.png"
+    },
+    {
+      "name": "Tufiqan Abid",
+      "image": "../../assets/images/about5.png"
+    },
+    {
+      "name": "Abdullah Ali",
+      "image": "/assets/images/about6.png"
+    },
+    {
+      "name": "Akhtar Khan",
+      "image": "../../assets/images/about7.png"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "We have ordered some accessories items and we got the products on time. Also the customer support department was super helpful and they answered all my queries.",
+      "author": "Stacy",
+      "image": "../../assets/images/about8.png"
+    },
+    {
+      "quote": "I ordered 5 shirts from them and received them in no time. The customer support was awesome.",
+      "author": "Tiffany",
+      "image": "../../assets/images/about9.png"
+    },
+    {
+      "quote": "I got a wrong shirt so I contacted them and they happily offered me a refund. I will surely shop from them again.",
+      "author": "James",
+      "image": "../../assets/images/about10.png"
+    }
+  ]
+}

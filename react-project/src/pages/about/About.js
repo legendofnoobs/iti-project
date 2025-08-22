@@ -1,6 +1,19 @@
+import { useEffect, useState } from 'react';
 import './about.css';
 
 const About = () => {
+    const [founders, setFounders] = useState([]);
+    const [testimonials, setTestimonials] = useState([]);
+
+    useEffect(() => {
+        fetch('/about.json')
+            .then(response => response.json())
+            .then(data => {
+                setFounders(data.founders);
+                setTestimonials(data.testimonials);
+            });
+    }, []);
+
     return (
         <div>
             <header className="about-header">
@@ -27,59 +40,27 @@ const About = () => {
             <section className="container section-py founders-section">
                 <h2>The Founders</h2>
                 <div className="founders-grid">
-                    <div className="founder-card">
-                        <img src="../../assets/images/about4.png" alt="HM Jawwad" />
-                        <p>HM Jawwad</p>
-                    </div>
-                    <div className="founder-card">
-                        <img src="../../assets/images/about5.png" alt="Tufiqan Abid" />
-                        <p>Tufiqan Abid</p>
-                    </div>
-                    <div className="founder-card">
-                        <img src="/assets/images/about6.png" alt="Abdullah Ali" />
-                        <p>Abdullah Ali</p>
-                    </div>
-                    <div className="founder-card">
-                        <img src="../../assets/images/about7.png" alt="Akhtar Khan" />
-                        <p>Akhtar Khan</p>
-                    </div>
+                    {founders.map((founder, index) => (
+                        <div className="founder-card" key={index}>
+                            <img src={founder.image} alt={founder.name} />
+                            <p>{founder.name}</p>
+                        </div>
+                    ))}
                 </div>
             </section>
 
             <section className="testimonials-section section-py">
                 <h2>Testimonials</h2>
                 <div className="testimonial-list">
-                    <div className="testimonial-item">
-                        <img src="../../assets/images/about8.png" alt="Stacy" />
-                        <div className="testimonial-content">
-                            <p className="testimonial-quote">
-                                We have ordered some accessories items and we got the products on
-                                time. Also the customer support department was super helpful and
-                                they answered all my queries.
-                            </p>
-                            <p className="testimonial-author">- Stacy</p>
+                    {testimonials.map((testimonial, index) => (
+                        <div className="testimonial-item" key={index}>
+                            <img src={testimonial.image} alt={testimonial.author} />
+                            <div className="testimonial-content">
+                                <p className="testimonial-quote">{testimonial.quote}</p>
+                                <p className="testimonial-author">- {testimonial.author}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="testimonial-item">
-                        <img src="../../assets/images/about9.png" alt="Tiffany" />
-                        <div className="testimonial-content">
-                            <p className="testimonial-quote">
-                                I ordered 5 shirts from them and received them in no time. The
-                                customer support was awesome.
-                            </p>
-                            <p className="testimonial-author">- Tiffany</p>
-                        </div>
-                    </div>
-                    <div className="testimonial-item">
-                        <img src="../../assets/images/about10.png" alt="James" />
-                        <div className="testimonial-content">
-                            <p className="testimonial-quote">
-                                I got a wrong shirt so I contacted them and they happily offered
-                                me a refund. I will surely shop from them again.
-                            </p>
-                            <p className="testimonial-author">- James</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </section>
         </div>
