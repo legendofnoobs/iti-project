@@ -8,8 +8,8 @@ import About from "./pages/about/About";
 import Cart from "./pages/cart/cart";
 import SignIn from "./pages/signIn/signIn";
 import SignUp from "./pages/signUp/signUp";
+import Contact from "./pages/contact/Contact";
 import { DataProvider } from "./store/DataContext";
-import "./App.css";
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/single-product" element={<SingleProduct />} />

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Contact.css";
 
-const Contact = () => {
+export default function Contact(){
   const navigate = useNavigate;
   const [FormData, setFormData] = useState({
     name: "",
