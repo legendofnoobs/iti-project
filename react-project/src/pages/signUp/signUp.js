@@ -84,7 +84,7 @@ export default function SignUp() {
 
       <div className="auth-footer">
         Already have an account?{" "}
-        <a onClick={() => navigate("/signIn")}>Sign In</a>
+        <a onClick={() => navigate("/")}>Sign In</a>
       </div>
     </section>
   );
