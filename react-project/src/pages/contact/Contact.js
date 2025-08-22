@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./Contact.css";
 
 export default function Contact(){
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const [FormData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,13 +16,6 @@ export default function Contact(){
   });
 
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-
-  useEffect(() => {
-    const isAuthenticated = localStorage.getItem("isAuthenticated");
-    if (!isAuthenticated) {
-      navigate("/signin");
-    }
-  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -77,7 +70,7 @@ export default function Contact(){
         <h1>CONTACT US</h1>
       </section>
 
-      <main className="container">
+      <main className="container-contact">
         <div className="grid">
           <section>
             <h2>We would love to hear from you</h2>
