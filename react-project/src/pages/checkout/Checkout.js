@@ -5,7 +5,7 @@ import { useData } from "../../store/DataContext";
 
 export default function Checkout() {
   const navigate = useNavigate();
-  const { checkoutData, setCartData, setCheckoutData} = useData();
+  const { checkoutData, setCartData, setCheckoutData } = useData();
   const [popupIsOpened, setPopupIsOpened] = useState(false);
   const [popupMessage, setPopupMessage] = useState("");
   const [inputs, setInputs] = useState({});
@@ -56,7 +56,7 @@ export default function Checkout() {
       newErrors.town = "Please enter the town !";
     }
 
-    if (!/^[0-9]{11}$/.test(inputs.phone|| "")) {
+    if (!/^[0-9]{11}$/.test(inputs.phone || "")) {
       newErrors.phone = "Please enter the phone with 11 digits only !";
     }
 
@@ -94,7 +94,8 @@ export default function Checkout() {
       })
       .then(() => {
         showPopup("Order placed successfully 🙌");
-        event.target.reset();
+        setInputs({});
+        setErrors({});
         setCartData(null);
         setCheckoutData(null);
         setTimeout(() => {
