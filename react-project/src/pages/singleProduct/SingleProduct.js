@@ -29,7 +29,7 @@ const SingleProduct = () => {
             quantity: 1
         };
         setCartData(cartItem);
-        window.location.href = '/cart';
+        navigate('/cart');
     };
 
     if (!product.name) {
