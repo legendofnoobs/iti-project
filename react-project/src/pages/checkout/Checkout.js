@@ -41,7 +41,7 @@ export default function Checkout() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    let time;
+
     const newErrors = {};
 
     if (!/^[a-zA-Z\s-]+$/.test(inputs.fullName || "")) {
@@ -99,7 +99,7 @@ export default function Checkout() {
         setErrors({});
         setCartData(null);
         setCheckoutData(null);
-        time = setTimeout(() => {
+        setTimeout(() => {
           navigate("/");
         }, 3000);
       })
@@ -108,9 +108,6 @@ export default function Checkout() {
           return { ...error, placeOrder: "Try again later, Please :(" };
         });
       });
-    return () => {
-      clearTimeout(time);
-    };
   };
 
   return (
