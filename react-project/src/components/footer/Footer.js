@@ -4,6 +4,7 @@ import MasterCard from "../../assets/images/footerMasterCard.jpg";
 import PayPal from "../../assets/images/footerPayPal.jpg";
 import VisaElectron from "../../assets/images/footerVisaElectron.jpg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const [inputs, setInputs] = useState({});
@@ -80,55 +81,55 @@ export default function Footer() {
             <p>company info</p>
             <ul>
               <li>
-                <a href="#">About Us</a>
+                <Link to="#">About Us</Link>
               </li>
               <li>
-                <a href="#">Latest Posts</a>
+                <Link to="#">Latest Posts</Link>
               </li>
               <li>
-                <a href="#">Contact Us</a>
+                <Link to="#">Contact Us</Link>
               </li>
               <li>
-                <a href="#">Shop</a>
-              </li>
-            </ul>
-          </div>
-
-          <div className="footerColumn">
-            <p>help links</p>
-            <ul>
-              <li>
-                <a href="#">Tracking</a>
-              </li>
-              <li>
-                <a href="#">Order Status</a>
-              </li>
-              <li>
-                <a href="#">Delivery</a>
-              </li>
-              <li>
-                <a href="#">Shipping Info</a>
-              </li>
-              <li>
-                <a href="#">FAQ</a>
+                <Link to="#">Shop</Link>
               </li>
             </ul>
           </div>
 
           <div className="footerColumn">
-            <p>useful links</p>
+            <p>help Links</p>
             <ul>
               <li>
-                <a href="#">Special Offers</a>
+                <Link to="#">Tracking</Link>
               </li>
               <li>
-                <a href="#">Gift Cards</a>
+                <Link to="#">Order Status</Link>
               </li>
               <li>
-                <a href="#">Advertising</a>
+                <Link to="#">Delivery</Link>
               </li>
               <li>
-                <a href="#">Terms of Use</a>
+                <Link to="#">Shipping Info</Link>
+              </li>
+              <li>
+                <Link to="#">FAQ</Link>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footerColumn">
+            <p>useful Links</p>
+            <ul>
+              <li>
+                <Link to="#">Special Offers</Link>
+              </li>
+              <li>
+                <Link to="#">Gift Cards</Link>
+              </li>
+              <li>
+                <Link to="#">Advertising</Link>
+              </li>
+              <li>
+                <Link to="#">Terms of Use</Link>
               </li>
             </ul>
           </div>
@@ -154,23 +155,23 @@ export default function Footer() {
           <div id="lowerFooterLeftSide">
             <p id="copyRight">&copy; 2020 NorthStar eCommerce</p>
             <div id="policy">
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms & Conditions</a>
+              <Link to="#">Privacy Policy</Link>
+              <Link to="#">Terms & Conditions</Link>
             </div>
           </div>
           <div id="lowerFooterRightSide">
-            <a href="#">
+            <Link to="#">
               <img src={Visa} alt="Visa" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <img src={MasterCard} alt="MasterCard" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <img src={PayPal} alt="PayPal" />
-            </a>
-            <a href="#">
+            </Link>
+            <Link to="#">
               <img src={VisaElectron} alt="Visa Electron" />
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
