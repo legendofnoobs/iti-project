@@ -24,6 +24,8 @@ export default function Checkout() {
       const time = setTimeout(() => navigate("/"), 3000);
       return () => clearTimeout(time);
     }
+    console.log(checkoutData);
+    
   }, []);
 
   const showPopup = (message) => {
