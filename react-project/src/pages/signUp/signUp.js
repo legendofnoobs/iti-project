@@ -9,6 +9,7 @@ export default function SignUp() {
     email: "",
     password: "",
   });
+  const [messages, setMessages] = useState([]); // store validation messages
 
   useEffect(() => {
     const form = document.querySelector(".auth-form");
@@ -20,23 +21,22 @@ export default function SignUp() {
         const passwordinput = document.querySelector("#password");
 
         let isvalid = true;
-        let messages = [];
+        let newMessages = [];
 
-        if (
-          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailinput.value)
-        ) {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailinput.value)) {
           isvalid = false;
-          messages.push("Enter a valid email address.");
+          newMessages.push("Enter a valid email address.");
         }
 
         if (passwordinput.value.trim().length < 6) {
           isvalid = false;
-          messages.push("Password must be at least 6 characters.");
+          newMessages.push("Password must be at least 6 characters.");
         }
 
         if (!isvalid) {
-          alert(messages.join("\n"));
+          setMessages(newMessages); // show messages inside UI
         } else {
+          setMessages([]); // clear errors
           navigate("/signIn");
         }
       });
@@ -82,6 +82,16 @@ export default function SignUp() {
             setFormData({ ...formData, password: e.target.value })
           }
         />
+        
+        {messages.length > 0 && (
+          <div className="error-messages">
+            {messages.map((msg, index) => (
+              <p key={index} style={{ color: "red", margin: 0 }}>
+                {msg}
+              </p>
+            ))}
+          </div>
+        )}
 
         <button type="submit">Sign Up</button>
       </form>

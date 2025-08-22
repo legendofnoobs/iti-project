@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/home/Home";
 import SingleProduct from "./pages/singleProduct/SingleProduct";
 import About from "./pages/about/About";
-import Cart from "./pages/cart/cart";
+import Cart from "./pages/cart/Cart";
 import SignIn from "./pages/signIn/signIn";
 import SignUp from "./pages/signUp/signUp";
 import { DataProvider } from "./store/DataContext";
