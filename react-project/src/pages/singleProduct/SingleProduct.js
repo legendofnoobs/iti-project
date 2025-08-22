@@ -9,6 +9,7 @@ const SingleProduct = () => {
     const [activeTab, setActiveTab] = useState('description');
     const [selectedSize, setSelectedSize] = useState('');
     const navigate = useNavigate();
+    const { setCartData } = useData();
 
     useEffect(() => {
         if (selectedProduct) {

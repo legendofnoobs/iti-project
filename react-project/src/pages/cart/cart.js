@@ -5,25 +5,21 @@ import { useData } from "../../store/DataContext";
 
 export default function Cart() {
   const navigate = useNavigate(); 
-  const { cartData ,setCheckoutData } = useData();
+  const { cartData, setCartData, setCheckoutData } = useData();
 
-  const [cartItem, setCartItem] = useState(JSON.parse(localStorage.getItem("cartItem")));
-  const [quantity, setQuantity] = useState(1);
-  const [pricePerItem, setPricePerItem] = useState(0);
+  const [cartItem, setCartItem] = useState(cartData);
+  const [quantity, setQuantity] = useState(cartData?.quantity || 1);
+  const [pricePerItem, setPricePerItem] = useState(cartData?.priceAfter || 0);
   const [subtotal, setSubtotal] = useState(0);
   const [showCheckoutPopup, setShowCheckoutPopup] = useState(false);
 
   useEffect(() => {
     if (cartData) {
-      const item = cartData;
-      setCartItem(item);
-      setPricePerItem(item.priceAfter);
-      setQuantity(item.quantity || 1);
-    } else if (cartItem) {
-        setPricePerItem(cartItem.priceAfter);
-        setQuantity(cartItem.quantity || 1);
+      setCartItem(cartData);
+      setPricePerItem(cartData.priceAfter);
+      setQuantity(cartData.quantity || 1);
     }
-  }, [cartData, cartItem]);
+  }, [cartData]);
 
   useEffect(() => {
     if (cartItem) {
@@ -36,13 +32,14 @@ export default function Cart() {
     let value = parseInt(e.target.value) || 1;
     if (value < 1) value = 1;
     setQuantity(value);
+    setCartData({ ...cartItem, quantity: value });
   };
 
   const handleRemove = () => {
     setCartItem(null);
     setSubtotal(0);
-    localStorage.removeItem("cartItem");
-    alert("item removed from cart.");
+    setCartData(null);
+    alert("Item removed from cart.");
   };
 
   const handleCheckout = (e) => {
@@ -51,7 +48,7 @@ export default function Cart() {
   };
 
   const confirmCheckout = () => {
-    const cartData = {
+    const checkoutObj = {
       product: cartItem?.name || "",
       quantity,
       price: pricePerItem.toFixed(2),
@@ -59,8 +56,7 @@ export default function Cart() {
       total: subtotal,
     };
 
-    setCheckoutData(cartData);
-
+    setCheckoutData(checkoutObj);
     navigate("/checkout");
   };
 
