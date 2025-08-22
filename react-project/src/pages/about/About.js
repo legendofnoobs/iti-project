@@ -7,7 +7,7 @@ const About = () => {
                 <h1>ABOUT NORTHSTAR</h1>
             </header>
 
-            <section className="container section-py">
+            <section className="container-about section-py">
                 <div className="hero-images-container">
                     <div className="hero-image-card">
                         <img src="../../assets/images/about1.png" alt="Woman Model" />

@@ -1,25 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import './singleProduct.css';
-import Navbar from '../../components/navbar/Navbar';
-import Footer from '../../components/footer/Footer';
 import { useNavigate } from 'react-router-dom';
 import { useData } from '../../store/DataContext';
 
 const SingleProduct = () => {
+    const {selectedProduct,setCartData}=useData();
     const [product, setProduct] = useState({});
     const [activeTab, setActiveTab] = useState('description');
     const [selectedSize, setSelectedSize] = useState('');
     const navigate = useNavigate();
-    const { setCartData } = useData();
 
     useEffect(() => {
-        const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
         if (selectedProduct) {
             setProduct(selectedProduct);
         } else {
             navigate('/');
         }
-    }, [navigate]);
+    }, []);
 
     const handleAddToCart = () => {
         if (!selectedSize) {
@@ -41,8 +38,7 @@ const SingleProduct = () => {
 
     return (
         <>
-            <Navbar />
-            <main className="container">
+            <main className="container-single-product">
                 <section className="product-section">
                     <div className="product-image">
                         {product.discount && <span className="product-badge">-{product.discount}%</span>}
@@ -93,7 +89,6 @@ const SingleProduct = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
         </>
     );
 };

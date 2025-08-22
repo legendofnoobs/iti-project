@@ -1,12 +1,4 @@
-body {
-    font-family: sans-serif;
-    background-color: white;
-    color: #1a202c;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
+.container-single-product {
     max-width: 1280px;
     margin: 0 auto;
     padding: 2rem 1rem;

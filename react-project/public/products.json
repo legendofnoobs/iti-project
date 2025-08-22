@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "name": "White Shirt",
         "priceBefore": 30,
         "priceAfter": 25,
@@ -15,6 +16,7 @@
         "rate": 4.3
     },
     {
+        "id":2,
         "name": "Denim Jacket ",
         "priceBefore": 70,
         "priceAfter": 60,
@@ -30,6 +32,7 @@
         "rate": 4.6
     },
     {
+        "id":3,
         "name": "Wool Blend Sweater",
         "priceBefore": 50,
         "priceAfter": 45,
@@ -45,6 +48,7 @@
         "rate": 4.1
     },
     {
+        "id":4,
         "name": "Blue Shirt",
         "priceBefore": 90,
         "priceAfter": 80,
@@ -60,6 +64,7 @@
         "rate": 4.8
     },
     {
+        "id":5,
         "name": "Navy Shirt",
         "priceBefore": 65,
         "priceAfter": 55,
@@ -75,6 +80,7 @@
         "rate": 4.4
     },
     {
+        "id":6,
         "name": "White T-shirt",
         "priceBefore": 35,
         "priceAfter": 30,
@@ -90,6 +96,7 @@
         "rate": 4.2
     },
     {
+        "id":7,
         "name": "White Shirt",
         "priceBefore": 40,
         "priceAfter": 35,
@@ -105,6 +112,7 @@
         "rate": 4.5
     },
     {
+        "id":8,
         "name": "Gray T-shirt",
         "priceBefore": 50,
         "priceAfter": 45,
