@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./signUp.css";
 
 export default function SignUp() {
@@ -84,7 +84,7 @@ export default function SignUp() {
 
       <div className="auth-footer">
         Already have an account?{" "}
-        <a onClick={() => navigate("/")}>Sign In</a>
+        <Link to={"/"}>Sign In</Link>
       </div>
     </section>
   );
