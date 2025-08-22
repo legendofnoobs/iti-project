@@ -1,5 +1,6 @@
 [
     {
+        "id":1,
         "name": "Red Shirt",
         "priceBefore": 37,
         "priceAfter": 32,
@@ -15,6 +16,7 @@
         "rate": 4.7
     },
     {
+        "id":2,
         "name": "Gray T-shirt",
         "priceBefore": 60,
         "priceAfter": 55,
@@ -30,6 +32,7 @@
         "rate": 4.0
     },
     {
+        "id":3,
         "name": "Loose White shirt",
         "priceBefore": 55,
         "priceAfter": 50,
@@ -45,6 +48,7 @@
         "rate": 4.3
     },
     {
+        "id":4,
         "name": "Black Polo",
         "priceBefore": 100,
         "priceAfter": 90,
