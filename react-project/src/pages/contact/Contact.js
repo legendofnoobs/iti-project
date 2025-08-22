@@ -23,7 +23,7 @@ const handleChange = (e) => {
         setErrors (prev => ({...prev, [name]:""}))
     }
 }
-};
+
 
 const validateForm = () => {
     const newErrors = {};
@@ -115,13 +115,6 @@ return(
         </div>
     </main>
     </>
+
 )
-
-
-
-
-
-
-
-
-
+};
