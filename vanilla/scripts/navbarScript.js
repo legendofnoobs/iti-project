@@ -1,4 +1,4 @@
-fetch("../components/Navbar.html")
+fetch("../../vanilla/components/Navbar.html")
     .then((response) => response.text())
     .then((data) => {
         document.getElementById("navbar").innerHTML = data;

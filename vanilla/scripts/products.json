@@ -4,7 +4,7 @@
         "priceBefore": 30,
         "priceAfter": 25,
         "ShortDescription": "Modern urban-style white t-shirt.",
-        "image": "../assets/home1.png",
+        "image": "../../vanilla/assets/home1.png",
         "category": "T-Shirts",
         "tags": [
             "casual",
@@ -19,7 +19,7 @@
         "priceBefore": 70,
         "priceAfter": 60,
         "ShortDescription": "A classic denim jacket with a relaxed fit.",
-        "image": "../assets/home2.png",
+        "image": "../../vanilla/assets/home2.png",
         "category": "Jeans",
         "tags": [
             "casual",
@@ -34,7 +34,7 @@
         "priceBefore": 50,
         "priceAfter": 45,
         "ShortDescription": "Soft, warm sweater made from a wool blend.",
-        "image": "../assets/Rectangle 1 (1).png",
+        "image": "../../vanilla/assets/Rectangle 1 (1).png",
         "category": "Sweaters",
         "tags": [
             "winter",
@@ -49,7 +49,7 @@
         "priceBefore": 90,
         "priceAfter": 80,
         "ShortDescription": "A versatile blue button-down shirt.",
-        "image": "../assets/Rectangle 1 (2).png",
+        "image": "../../vanilla/assets/Rectangle 1 (2).png",
         "category": "Jackets",
         "tags": [
             "casual",
@@ -64,7 +64,7 @@
         "priceBefore": 65,
         "priceAfter": 55,
         "ShortDescription": "A flowy, casual navy shirt.",
-        "image": "../assets/Rectangle 1 (3).png",
+        "image": "../../vanilla/assets/Rectangle 1 (3).png",
         "category": "Dresses",
         "tags": [
             "summer",
@@ -79,7 +79,7 @@
         "priceBefore": 35,
         "priceAfter": 30,
         "ShortDescription": "Classic oxford-style white t-shirt.",
-        "image": "../assets/Rectangle 1 (4).png",
+        "image": "../../vanilla/assets/Rectangle 1 (4).png",
         "category": "Shirts",
         "tags": [
             "formal",
@@ -94,7 +94,7 @@
         "priceBefore": 40,
         "priceAfter": 35,
         "ShortDescription": "Durable white cargo shorts.",
-        "image": "../assets/Rectangle 1 (5).png",
+        "image": "../../vanilla/assets/Rectangle 1 (5).png",
         "category": "Shorts",
         "tags": [
             "casual",
@@ -109,7 +109,7 @@
         "priceBefore": 50,
         "priceAfter": 45,
         "ShortDescription": "Elegant gray pleated skirt.",
-        "image": "../assets/Rectangle 1 (6).png",
+        "image": "../../vanilla/assets/Rectangle 1 (6).png",
         "category": "Skirts",
         "tags": [
             "formal",

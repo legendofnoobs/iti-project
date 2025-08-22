@@ -47,7 +47,7 @@ const SingleProduct = () => {
                     <div className="product-info">
                         <h1>{product.name}</h1>
                         <div className="product-rating">★★★★★</div>
-                        <div className="product-price">
+                        <div className="products-price">
                             {product.priceAfter && <span>${product.priceAfter.toFixed(2)}</span>}
                             {product.priceBefore && <span className="original-price">${product.priceBefore.toFixed(2)}</span>}
                         </div>

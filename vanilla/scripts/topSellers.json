@@ -4,7 +4,7 @@
         "priceBefore": 37,
         "priceAfter": 32,
         "ShortDescription": "Stylish ribbed crop top.",
-        "image": "../assets/Rectangle 1 (7).png",
+        "image": "../../vanilla/assets/Rectangle 1 (7).png",
         "category": "Tops",
         "tags": [
             "casual",
@@ -19,7 +19,7 @@
         "priceBefore": 60,
         "priceAfter": 55,
         "ShortDescription": "Versatile chino pants.",
-        "image": "../assets/Rectangle 1 (8).png",
+        "image": "../../vanilla/assets/Rectangle 1 (8).png",
         "category": "Pants",
         "tags": [
             "casual",
@@ -34,7 +34,7 @@
         "priceBefore": 55,
         "priceAfter": 50,
         "ShortDescription": "Cozy fleece hoodie.",
-        "image": "../assets/Rectangle 1 (9).png",
+        "image": "../../vanilla/assets/Rectangle 1 (9).png",
         "category": "Hoodies",
         "tags": [
             "casual",
@@ -49,7 +49,7 @@
         "priceBefore": 100,
         "priceAfter": 90,
         "ShortDescription": "Sophisticated tailored blazer.",
-        "image": "../assets/Rectangle 1.png",
+        "image": "../../vanilla/assets/Rectangle 1.png",
         "category": "Blazers",
         "tags": [
             "formal",
