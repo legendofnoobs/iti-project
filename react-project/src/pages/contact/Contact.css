@@ -68,7 +68,7 @@ main{
     gap:56px
 }
 
-h2{
+.container h2{
     font-size:29px;
     margin:0 0 10px;
     font-weight: 500;
