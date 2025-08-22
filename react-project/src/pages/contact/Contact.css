@@ -33,7 +33,7 @@ html,body{
     display: grid;
     place-items: end start;
     color:#fff;
-    background-image:url('../assets/contact1.jpg');
+    background-image:url('../../assets/images/contact1.jpg');
     background-size:cover;
     background-position:center 18%;
     margin-bottom: 96px;
