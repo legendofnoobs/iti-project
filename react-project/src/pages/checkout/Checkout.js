@@ -21,7 +21,8 @@ export default function Checkout() {
   useEffect(() => {
     if (!checkoutData) {
       showPopup("Please choose product");
-      setTimeout(() => navigate("/"), 3000);
+      const time = setTimeout(() => navigate("/"), 3000);
+      return () => clearTimeout(time);
     }
   }, []);
 
@@ -40,7 +41,7 @@ export default function Checkout() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    let time;
     const newErrors = {};
 
     if (!/^[a-zA-Z\s-]+$/.test(inputs.fullName || "")) {
@@ -98,7 +99,7 @@ export default function Checkout() {
         setErrors({});
         setCartData(null);
         setCheckoutData(null);
-        setTimeout(() => {
+        time = setTimeout(() => {
           navigate("/");
         }, 3000);
       })
@@ -107,6 +108,9 @@ export default function Checkout() {
           return { ...error, placeOrder: "Try again later, Please :(" };
         });
       });
+    return () => {
+      clearTimeout(time);
+    };
   };
 
   return (
